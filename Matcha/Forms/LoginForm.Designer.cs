@@ -31,10 +31,12 @@ namespace Matcha.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.windowDragPanel = new System.Windows.Forms.Panel();
+            this.windowElipse = new ns1.SiticoneElipse(this.components);
+            this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
-            this.windowElipse = new ns1.SiticoneElipse(this.components);
             this.windowDragPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // windowDragPanel
@@ -42,12 +44,27 @@ namespace Matcha.Forms
             this.windowDragPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.windowDragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.windowDragPanel.Controls.Add(this.logoImageBox);
             this.windowDragPanel.Controls.Add(this.minimizeButton);
             this.windowDragPanel.Controls.Add(this.closeButton);
             this.windowDragPanel.Location = new System.Drawing.Point(0, 0);
             this.windowDragPanel.Name = "windowDragPanel";
             this.windowDragPanel.Size = new System.Drawing.Size(518, 32);
             this.windowDragPanel.TabIndex = 0;
+            // 
+            // windowElipse
+            // 
+            this.windowElipse.TargetControl = this;
+            // 
+            // logoImageBox
+            // 
+            this.logoImageBox.Image = global::Matcha.Properties.Resources.Matcha_Logo_Combo_Transparent;
+            this.logoImageBox.Location = new System.Drawing.Point(0, 0);
+            this.logoImageBox.Name = "logoImageBox";
+            this.logoImageBox.Size = new System.Drawing.Size(90, 32);
+            this.logoImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoImageBox.TabIndex = 1;
+            this.logoImageBox.TabStop = false;
             // 
             // minimizeButton
             // 
@@ -85,10 +102,6 @@ namespace Matcha.Forms
             this.closeButton.Size = new System.Drawing.Size(50, 32);
             this.closeButton.TabIndex = 1;
             // 
-            // windowElipse
-            // 
-            this.windowElipse.TargetControl = this;
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,6 +114,7 @@ namespace Matcha.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Login";
             this.windowDragPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,6 +125,7 @@ namespace Matcha.Forms
         private ns1.SiticoneElipse windowElipse;
         private ns1.SiticoneButton closeButton;
         private ns1.SiticoneButton minimizeButton;
+        private System.Windows.Forms.PictureBox logoImageBox;
     }
 }
 

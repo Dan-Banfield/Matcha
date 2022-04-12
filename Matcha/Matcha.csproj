@@ -89,6 +89,7 @@
   <ItemGroup>
     <Content Include="Assets\Images\CloseIcon.png" />
     <Content Include="Assets\Images\MinimizeIcon.png" />
+    <None Include="Resources\Matcha Logo Combo Transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
