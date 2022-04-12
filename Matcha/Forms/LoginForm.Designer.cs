@@ -32,10 +32,10 @@ namespace Matcha.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.windowDragPanel = new System.Windows.Forms.Panel();
-            this.windowElipse = new ns1.SiticoneElipse(this.components);
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
+            this.windowElipse = new ns1.SiticoneElipse(this.components);
             this.serialKeyTextBox = new ns1.SiticoneMaterialTextBox();
             this.loginButton = new ns1.SiticoneButton();
             this.getKeyButton = new ns1.SiticoneButton();
@@ -56,10 +56,6 @@ namespace Matcha.Forms
             this.windowDragPanel.Size = new System.Drawing.Size(518, 32);
             this.windowDragPanel.TabIndex = 0;
             this.windowDragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowDragPanel_MouseDown);
-            // 
-            // windowElipse
-            // 
-            this.windowElipse.TargetControl = this;
             // 
             // logoImageBox
             // 
@@ -109,6 +105,10 @@ namespace Matcha.Forms
             this.closeButton.TabIndex = 1;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // windowElipse
+            // 
+            this.windowElipse.TargetControl = this;
+            // 
             // serialKeyTextBox
             // 
             this.serialKeyTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -125,7 +125,7 @@ namespace Matcha.Forms
             this.serialKeyTextBox.ForeColor = System.Drawing.Color.White;
             this.serialKeyTextBox.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
             this.serialKeyTextBox.HoveredState.Parent = this.serialKeyTextBox;
-            this.serialKeyTextBox.Location = new System.Drawing.Point(47, 53);
+            this.serialKeyTextBox.Location = new System.Drawing.Point(47, 48);
             this.serialKeyTextBox.Name = "serialKeyTextBox";
             this.serialKeyTextBox.PasswordChar = '\0';
             this.serialKeyTextBox.PlaceholderText = "Serial Key";
@@ -145,7 +145,7 @@ namespace Matcha.Forms
             this.loginButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
             this.loginButton.HoveredState.Parent = this.loginButton;
             this.loginButton.ImageSize = new System.Drawing.Size(15, 20);
-            this.loginButton.Location = new System.Drawing.Point(47, 105);
+            this.loginButton.Location = new System.Drawing.Point(47, 100);
             this.loginButton.Name = "loginButton";
             this.loginButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.loginButton.ShadowDecoration.Parent = this.loginButton;
@@ -164,7 +164,7 @@ namespace Matcha.Forms
             this.getKeyButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
             this.getKeyButton.HoveredState.Parent = this.getKeyButton;
             this.getKeyButton.ImageSize = new System.Drawing.Size(15, 20);
-            this.getKeyButton.Location = new System.Drawing.Point(47, 143);
+            this.getKeyButton.Location = new System.Drawing.Point(47, 138);
             this.getKeyButton.Name = "getKeyButton";
             this.getKeyButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.getKeyButton.ShadowDecoration.Parent = this.getKeyButton;
@@ -177,7 +177,7 @@ namespace Matcha.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(518, 198);
+            this.ClientSize = new System.Drawing.Size(518, 194);
             this.Controls.Add(this.getKeyButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.serialKeyTextBox);
