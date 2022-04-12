@@ -36,6 +36,7 @@ namespace Matcha.Forms
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
+            this.serialKeyTextBox = new ns1.SiticoneMaterialTextBox();
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.SuspendLayout();
@@ -106,12 +107,38 @@ namespace Matcha.Forms
             this.closeButton.TabIndex = 1;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // serialKeyTextBox
+            // 
+            this.serialKeyTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.serialKeyTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.serialKeyTextBox.DefaultText = "";
+            this.serialKeyTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.serialKeyTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.serialKeyTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.serialKeyTextBox.DisabledState.Parent = this.serialKeyTextBox;
+            this.serialKeyTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.serialKeyTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.serialKeyTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.serialKeyTextBox.FocusedState.Parent = this.serialKeyTextBox;
+            this.serialKeyTextBox.ForeColor = System.Drawing.Color.White;
+            this.serialKeyTextBox.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.serialKeyTextBox.HoveredState.Parent = this.serialKeyTextBox;
+            this.serialKeyTextBox.Location = new System.Drawing.Point(47, 53);
+            this.serialKeyTextBox.Name = "serialKeyTextBox";
+            this.serialKeyTextBox.PasswordChar = '\0';
+            this.serialKeyTextBox.PlaceholderText = "Serial Key";
+            this.serialKeyTextBox.SelectedText = "";
+            this.serialKeyTextBox.ShadowDecoration.Parent = this.serialKeyTextBox;
+            this.serialKeyTextBox.Size = new System.Drawing.Size(424, 36);
+            this.serialKeyTextBox.TabIndex = 1;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(518, 174);
+            this.Controls.Add(this.serialKeyTextBox);
             this.Controls.Add(this.windowDragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -131,6 +158,7 @@ namespace Matcha.Forms
         private ns1.SiticoneButton closeButton;
         private ns1.SiticoneButton minimizeButton;
         private System.Windows.Forms.PictureBox logoImageBox;
+        private ns1.SiticoneMaterialTextBox serialKeyTextBox;
     }
 }
 
