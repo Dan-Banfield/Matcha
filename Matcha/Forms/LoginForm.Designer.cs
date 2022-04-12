@@ -52,6 +52,7 @@ namespace Matcha.Forms
             this.windowDragPanel.Name = "windowDragPanel";
             this.windowDragPanel.Size = new System.Drawing.Size(518, 32);
             this.windowDragPanel.TabIndex = 0;
+            this.windowDragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowDragPanel_MouseDown);
             // 
             // windowElipse
             // 
@@ -84,6 +85,7 @@ namespace Matcha.Forms
             this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
             this.minimizeButton.Size = new System.Drawing.Size(50, 32);
             this.minimizeButton.TabIndex = 2;
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // closeButton
             // 
@@ -102,6 +104,7 @@ namespace Matcha.Forms
             this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(50, 32);
             this.closeButton.TabIndex = 1;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // LoginForm
             // 
