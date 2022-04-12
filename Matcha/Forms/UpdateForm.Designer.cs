@@ -32,15 +32,15 @@ namespace Matcha.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateForm));
             this.windowDragPanel = new System.Windows.Forms.Panel();
-            this.windowElipse = new ns1.SiticoneElipse(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.bigLogoImageBox = new System.Windows.Forms.PictureBox();
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
+            this.windowElipse = new ns1.SiticoneElipse(this.components);
+            this.updateCheckStatusLabel = new System.Windows.Forms.Label();
+            this.bigLogoImageBox = new System.Windows.Forms.PictureBox();
             this.windowDragPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // windowDragPanel
@@ -53,34 +53,9 @@ namespace Matcha.Forms
             this.windowDragPanel.Controls.Add(this.closeButton);
             this.windowDragPanel.Location = new System.Drawing.Point(0, 0);
             this.windowDragPanel.Name = "windowDragPanel";
-            this.windowDragPanel.Size = new System.Drawing.Size(427, 32);
+            this.windowDragPanel.Size = new System.Drawing.Size(390, 32);
             this.windowDragPanel.TabIndex = 0;
             this.windowDragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowDragPanel_MouseDown);
-            // 
-            // windowElipse
-            // 
-            this.windowElipse.TargetControl = this;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(112, 182);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Checking for updates...";
-            // 
-            // bigLogoImageBox
-            // 
-            this.bigLogoImageBox.Image = global::Matcha.Properties.Resources.Matcha_Icon;
-            this.bigLogoImageBox.Location = new System.Drawing.Point(114, 59);
-            this.bigLogoImageBox.Name = "bigLogoImageBox";
-            this.bigLogoImageBox.Size = new System.Drawing.Size(201, 120);
-            this.bigLogoImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bigLogoImageBox.TabIndex = 2;
-            this.bigLogoImageBox.TabStop = false;
             // 
             // logoImageBox
             // 
@@ -104,7 +79,7 @@ namespace Matcha.Forms
             this.minimizeButton.HoveredState.Parent = this.minimizeButton;
             this.minimizeButton.Image = global::Matcha.Properties.Resources.MinimizeIcon;
             this.minimizeButton.ImageSize = new System.Drawing.Size(15, 20);
-            this.minimizeButton.Location = new System.Drawing.Point(327, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(290, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
@@ -124,7 +99,7 @@ namespace Matcha.Forms
             this.closeButton.HoveredState.Parent = this.closeButton;
             this.closeButton.Image = global::Matcha.Properties.Resources.CloseIcon;
             this.closeButton.ImageSize = new System.Drawing.Size(14, 14);
-            this.closeButton.Location = new System.Drawing.Point(377, 0);
+            this.closeButton.Location = new System.Drawing.Point(340, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.PressedColor = System.Drawing.Color.Red;
             this.closeButton.ShadowDecoration.Parent = this.closeButton;
@@ -132,13 +107,40 @@ namespace Matcha.Forms
             this.closeButton.TabIndex = 1;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // windowElipse
+            // 
+            this.windowElipse.TargetControl = this;
+            // 
+            // updateCheckStatusLabel
+            // 
+            this.updateCheckStatusLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updateCheckStatusLabel.AutoSize = true;
+            this.updateCheckStatusLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateCheckStatusLabel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.updateCheckStatusLabel.Location = new System.Drawing.Point(94, 166);
+            this.updateCheckStatusLabel.Name = "updateCheckStatusLabel";
+            this.updateCheckStatusLabel.Size = new System.Drawing.Size(203, 25);
+            this.updateCheckStatusLabel.TabIndex = 1;
+            this.updateCheckStatusLabel.Text = "Checking for updates...";
+            // 
+            // bigLogoImageBox
+            // 
+            this.bigLogoImageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bigLogoImageBox.Image = global::Matcha.Properties.Resources.Matcha_Icon;
+            this.bigLogoImageBox.Location = new System.Drawing.Point(96, 43);
+            this.bigLogoImageBox.Name = "bigLogoImageBox";
+            this.bigLogoImageBox.Size = new System.Drawing.Size(201, 120);
+            this.bigLogoImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bigLogoImageBox.TabIndex = 2;
+            this.bigLogoImageBox.TabStop = false;
+            // 
             // UpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(427, 255);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(390, 223);
+            this.Controls.Add(this.updateCheckStatusLabel);
             this.Controls.Add(this.bigLogoImageBox);
             this.Controls.Add(this.windowDragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -147,8 +149,8 @@ namespace Matcha.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Updater";
             this.windowDragPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +163,7 @@ namespace Matcha.Forms
         private ns1.SiticoneButton closeButton;
         private ns1.SiticoneButton minimizeButton;
         private System.Windows.Forms.PictureBox logoImageBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label updateCheckStatusLabel;
         private System.Windows.Forms.PictureBox bigLogoImageBox;
     }
 }

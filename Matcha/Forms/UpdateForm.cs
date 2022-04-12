@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace Matcha.Forms
 {
@@ -39,11 +40,25 @@ namespace Matcha.Forms
 
         #region Methods
 
-        public void CheckForUpdates()
+        public async void CheckForUpdates()
         {
-            //TODO: Check for updates.
+            UpdateInfo updateInfo = new UpdateInfo();
+            await GetUpdateInfo(out updateInfo);
+        }
+
+        public async Task GetUpdateInfo(out UpdateInfo updateInfo)
+        {
+            //TODO: Get latest update info.
         }
 
         #endregion
+    }
+
+    public class UpdateInfo
+    {
+        public double latestVersion { get; set; }
+        public string latestVersionDownloadLink { get; set; }
+        public string changeLog { get; set; }
+        public string announcement { get; set; }
     }
 }
