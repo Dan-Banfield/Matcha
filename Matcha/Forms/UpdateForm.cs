@@ -1,12 +1,22 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Matcha.Forms
 {
     public partial class UpdateForm : Form
     {
+        private const string UPDATE_INFO_ENDPOINT = "https://raw.githubusercontent.com/Dan-Banfield/Json-Update-Files/main/MatchaUpdateInfo.json";
+        private const double CURRENT_VERSION = 1.0;
+
+        private enum UpdateStatus { UpdatesAvailable, NoUpdatesAvailable, CheckFailed }
+
+        private UpdateInfo updateInfo;
+
         public UpdateForm()
         {
             InitializeComponent();
@@ -40,15 +50,65 @@ namespace Matcha.Forms
 
         #region Methods
 
-        public async void CheckForUpdates()
+        private async void CheckForUpdates()
         {
-            UpdateInfo updateInfo = new UpdateInfo();
-            await GetUpdateInfo(out updateInfo);
+            UpdateStatus updateStatus = UpdateStatus.CheckFailed;
+
+            await Task.Run(() => 
+            {
+                updateStatus = GetUpdateInformation();
+            });
+
+            HandleUpdateResponse(updateStatus);
         }
 
-        public async Task GetUpdateInfo(out UpdateInfo updateInfo)
+        private UpdateStatus GetUpdateInformation()
         {
-            //TODO: Get latest update info.
+            try
+            {
+                WebRequest webRequest = WebRequest.Create(UPDATE_INFO_ENDPOINT);
+                WebResponse webResponse = webRequest.GetResponse();
+
+                string json = "";
+
+                using (StreamReader streamReader = new StreamReader(webResponse.GetResponseStream()))
+                {
+                    json = streamReader.ReadToEnd();
+                }
+
+                updateInfo = JsonConvert.DeserializeObject<UpdateInfo>(json);
+
+                return VerifyUpdateStatus();
+            }
+            catch { return UpdateStatus.CheckFailed; }
+        }
+
+        private UpdateStatus VerifyUpdateStatus()
+        {
+            if (updateInfo == null) return UpdateStatus.CheckFailed;
+            if (updateInfo.latestVersion > CURRENT_VERSION) return UpdateStatus.UpdatesAvailable;
+            if (updateInfo.latestVersion == CURRENT_VERSION) return UpdateStatus.NoUpdatesAvailable;
+
+            return UpdateStatus.CheckFailed;
+        }
+
+        private void HandleUpdateResponse(UpdateStatus updateStatus)
+        {
+            switch (updateStatus)
+            {
+                case UpdateStatus.UpdatesAvailable:
+                    if (MessageBox.Show("Version v" + updateInfo.latestVersion.ToString("0.0") + " is available! \n\nChangelog:\n" + updateInfo.changeLog + "\n\nWould you like to download it?", "Updates Available!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) { Process.Start(updateInfo.latestVersionDownloadLink); Process.GetCurrentProcess().Kill(); }
+                    break;
+                case UpdateStatus.NoUpdatesAvailable:
+                    Generics.MessageBox.ShowInformationMessage("You're running the latest version! Nice.");
+                    break;
+                case UpdateStatus.CheckFailed:
+                    Generics.MessageBox.ShowErrorMessage("Failed to check for updates! Please connect to the internet and try again later.");
+                    break;
+            }
+
+            this.Hide();
+            new LoginForm().Show();
         }
 
         #endregion
