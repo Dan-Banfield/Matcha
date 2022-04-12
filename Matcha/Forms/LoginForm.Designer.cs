@@ -37,6 +37,8 @@ namespace Matcha.Forms
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
             this.serialKeyTextBox = new ns1.SiticoneMaterialTextBox();
+            this.loginButton = new ns1.SiticoneButton();
+            this.getKeyButton = new ns1.SiticoneButton();
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.SuspendLayout();
@@ -132,12 +134,52 @@ namespace Matcha.Forms
             this.serialKeyTextBox.Size = new System.Drawing.Size(424, 36);
             this.serialKeyTextBox.TabIndex = 1;
             // 
+            // loginButton
+            // 
+            this.loginButton.BorderRadius = 3;
+            this.loginButton.CheckedState.Parent = this.loginButton;
+            this.loginButton.CustomImages.Parent = this.loginButton;
+            this.loginButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.loginButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.loginButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.loginButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.loginButton.HoveredState.Parent = this.loginButton;
+            this.loginButton.ImageSize = new System.Drawing.Size(15, 20);
+            this.loginButton.Location = new System.Drawing.Point(47, 105);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.loginButton.ShadowDecoration.Parent = this.loginButton;
+            this.loginButton.Size = new System.Drawing.Size(421, 32);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "Login";
+            // 
+            // getKeyButton
+            // 
+            this.getKeyButton.BorderRadius = 3;
+            this.getKeyButton.CheckedState.Parent = this.getKeyButton;
+            this.getKeyButton.CustomImages.Parent = this.getKeyButton;
+            this.getKeyButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.getKeyButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.getKeyButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.getKeyButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.getKeyButton.HoveredState.Parent = this.getKeyButton;
+            this.getKeyButton.ImageSize = new System.Drawing.Size(15, 20);
+            this.getKeyButton.Location = new System.Drawing.Point(47, 143);
+            this.getKeyButton.Name = "getKeyButton";
+            this.getKeyButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.getKeyButton.ShadowDecoration.Parent = this.getKeyButton;
+            this.getKeyButton.Size = new System.Drawing.Size(421, 32);
+            this.getKeyButton.TabIndex = 4;
+            this.getKeyButton.Text = "Get Key";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(518, 174);
+            this.ClientSize = new System.Drawing.Size(518, 198);
+            this.Controls.Add(this.getKeyButton);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.serialKeyTextBox);
             this.Controls.Add(this.windowDragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -159,6 +201,8 @@ namespace Matcha.Forms
         private ns1.SiticoneButton minimizeButton;
         private System.Windows.Forms.PictureBox logoImageBox;
         private ns1.SiticoneMaterialTextBox serialKeyTextBox;
+        private ns1.SiticoneButton loginButton;
+        private ns1.SiticoneButton getKeyButton;
     }
 }
 
