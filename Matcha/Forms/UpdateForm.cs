@@ -100,7 +100,7 @@ namespace Matcha.Forms
                     if (MessageBox.Show("Version v" + updateInfoRecieved.latestVersion.ToString("0.0") + " is available! \n\nChangelog:\n" + updateInfoRecieved.changeLog + "\n\nWould you like to download it?", "Updates Available!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) { Process.Start(updateInfoRecieved.latestVersionDownloadLink); Process.GetCurrentProcess().Kill(); }
                     break;
                 case UpdateStatus.NoUpdatesAvailable:
-                    Generics.MessageBox.ShowInformationMessage("You're running the latest version! Nice.");
+                    Generics.MessageBox.ShowInformationMessage("You're running the latest version.");
                     break;
                 case UpdateStatus.CheckFailed:
                     Generics.MessageBox.ShowErrorMessage("Failed to check for updates! Please connect to the internet and try again later.");
