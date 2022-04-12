@@ -73,6 +73,16 @@ namespace Matcha.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Matcha_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Matcha Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Matcha_Logo_Combo_Transparent {
             get {
                 object obj = ResourceManager.GetObject("Matcha Logo Combo Transparent", resourceCulture);
