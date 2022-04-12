@@ -15,7 +15,7 @@ namespace Matcha.Forms
 
         private enum UpdateStatus { UpdatesAvailable, NoUpdatesAvailable, CheckFailed }
 
-        private UpdateInfo updateInfo;
+        private UpdateInfo updateInfoRecieved;
 
         public UpdateForm()
         {
@@ -59,7 +59,7 @@ namespace Matcha.Forms
                 updateStatus = GetUpdateInformation();
             });
 
-            HandleUpdateResponse(updateStatus);
+            PostUpdateWork(updateStatus);
         }
 
         private UpdateStatus GetUpdateInformation()
@@ -76,7 +76,7 @@ namespace Matcha.Forms
                     json = streamReader.ReadToEnd();
                 }
 
-                updateInfo = JsonConvert.DeserializeObject<UpdateInfo>(json);
+                updateInfoRecieved = JsonConvert.DeserializeObject<UpdateInfo>(json);
 
                 return VerifyUpdateStatus();
             }
@@ -85,9 +85,9 @@ namespace Matcha.Forms
 
         private UpdateStatus VerifyUpdateStatus()
         {
-            if (updateInfo == null) return UpdateStatus.CheckFailed;
-            if (updateInfo.latestVersion > CURRENT_VERSION) return UpdateStatus.UpdatesAvailable;
-            if (updateInfo.latestVersion == CURRENT_VERSION) return UpdateStatus.NoUpdatesAvailable;
+            if (updateInfoRecieved == null) return UpdateStatus.CheckFailed;
+            if (updateInfoRecieved.latestVersion > CURRENT_VERSION) return UpdateStatus.UpdatesAvailable;
+            if (updateInfoRecieved.latestVersion == CURRENT_VERSION) return UpdateStatus.NoUpdatesAvailable;
 
             return UpdateStatus.CheckFailed;
         }
@@ -97,7 +97,7 @@ namespace Matcha.Forms
             switch (updateStatus)
             {
                 case UpdateStatus.UpdatesAvailable:
-                    if (MessageBox.Show("Version v" + updateInfo.latestVersion.ToString("0.0") + " is available! \n\nChangelog:\n" + updateInfo.changeLog + "\n\nWould you like to download it?", "Updates Available!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) { Process.Start(updateInfo.latestVersionDownloadLink); Process.GetCurrentProcess().Kill(); }
+                    if (MessageBox.Show("Version v" + updateInfoRecieved.latestVersion.ToString("0.0") + " is available! \n\nChangelog:\n" + updateInfoRecieved.changeLog + "\n\nWould you like to download it?", "Updates Available!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) { Process.Start(updateInfoRecieved.latestVersionDownloadLink); Process.GetCurrentProcess().Kill(); }
                     break;
                 case UpdateStatus.NoUpdatesAvailable:
                     Generics.MessageBox.ShowInformationMessage("You're running the latest version! Nice.");
@@ -106,9 +106,22 @@ namespace Matcha.Forms
                     Generics.MessageBox.ShowErrorMessage("Failed to check for updates! Please connect to the internet and try again later.");
                     break;
             }
+        }
+
+        private void PostUpdateWork(UpdateStatus updateStatus)
+        {
+            HandleUpdateResponse(updateStatus);
+            ShowAnnouncements();
 
             this.Hide();
             new LoginForm().Show();
+        }
+
+        private void ShowAnnouncements()
+        {
+            if (updateInfoRecieved == null) return;
+
+            if (!string.IsNullOrWhiteSpace(updateInfoRecieved.announcement)) Generics.MessageBox.ShowInformationMessage("Announcement: " + updateInfoRecieved.announcement);
         }
 
         #endregion
