@@ -31,9 +31,9 @@ namespace Matcha.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.windowDragPanel = new System.Windows.Forms.Panel();
-            this.windowElipse = new ns1.SiticoneElipse(this.components);
-            this.closeButton = new ns1.SiticoneButton();
             this.minimizeButton = new ns1.SiticoneButton();
+            this.closeButton = new ns1.SiticoneButton();
+            this.windowElipse = new ns1.SiticoneElipse(this.components);
             this.windowDragPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,9 +49,23 @@ namespace Matcha.Forms
             this.windowDragPanel.Size = new System.Drawing.Size(518, 32);
             this.windowDragPanel.TabIndex = 0;
             // 
-            // windowElipse
+            // minimizeButton
             // 
-            this.windowElipse.TargetControl = this;
+            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
+            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
+            this.minimizeButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.minimizeButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.minimizeButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.minimizeButton.HoveredState.Parent = this.minimizeButton;
+            this.minimizeButton.Image = global::Matcha.Properties.Resources.MinimizeIcon;
+            this.minimizeButton.ImageSize = new System.Drawing.Size(15, 20);
+            this.minimizeButton.Location = new System.Drawing.Point(418, 0);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
+            this.minimizeButton.Size = new System.Drawing.Size(50, 32);
+            this.minimizeButton.TabIndex = 2;
             // 
             // closeButton
             // 
@@ -62,30 +76,18 @@ namespace Matcha.Forms
             this.closeButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.closeButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.closeButton.HoveredState.Parent = this.closeButton;
+            this.closeButton.Image = global::Matcha.Properties.Resources.CloseIcon;
+            this.closeButton.ImageSize = new System.Drawing.Size(14, 14);
             this.closeButton.Location = new System.Drawing.Point(468, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.PressedColor = System.Drawing.Color.Red;
             this.closeButton.ShadowDecoration.Parent = this.closeButton;
             this.closeButton.Size = new System.Drawing.Size(50, 32);
             this.closeButton.TabIndex = 1;
-            this.closeButton.Text = "X";
             // 
-            // minimizeButton
+            // windowElipse
             // 
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
-            this.minimizeButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.minimizeButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.minimizeButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
-            this.minimizeButton.HoveredState.Parent = this.minimizeButton;
-            this.minimizeButton.Location = new System.Drawing.Point(418, 0);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
-            this.minimizeButton.Size = new System.Drawing.Size(50, 32);
-            this.minimizeButton.TabIndex = 2;
-            this.minimizeButton.Text = "-";
+            this.windowElipse.TargetControl = this;
             // 
             // LoginForm
             // 
