@@ -30,6 +30,7 @@ namespace Matcha.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.windowDragPanel = new System.Windows.Forms.Panel();
             this.windowElipse = new ns1.SiticoneElipse(this.components);
             this.logoImageBox = new System.Windows.Forms.PictureBox();
@@ -59,7 +60,7 @@ namespace Matcha.Forms
             // logoImageBox
             // 
             this.logoImageBox.Image = global::Matcha.Properties.Resources.Matcha_Logo_Combo_Transparent;
-            this.logoImageBox.Location = new System.Drawing.Point(0, 0);
+            this.logoImageBox.Location = new System.Drawing.Point(3, 0);
             this.logoImageBox.Name = "logoImageBox";
             this.logoImageBox.Size = new System.Drawing.Size(90, 32);
             this.logoImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -110,6 +111,7 @@ namespace Matcha.Forms
             this.ClientSize = new System.Drawing.Size(518, 174);
             this.Controls.Add(this.windowDragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Login";

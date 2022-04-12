@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Matcha Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Siticone.UI">
       <HintPath>..\..\..\Obfuscators\Last Rose\Last Rose\Siticone.UI.dll</HintPath>
@@ -89,6 +92,7 @@
   <ItemGroup>
     <Content Include="Assets\Images\CloseIcon.png" />
     <Content Include="Assets\Images\MinimizeIcon.png" />
+    <Content Include="Matcha Icon.ico" />
     <None Include="Resources\Matcha Logo Combo Transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
