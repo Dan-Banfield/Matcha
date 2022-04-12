@@ -107,6 +107,8 @@
     <Content Include="Assets\Images\CloseIcon.png" />
     <Content Include="Assets\Images\MinimizeIcon.png" />
     <Content Include="Matcha Icon.ico" />
+    <None Include="Resources\Matcha Logo Icon Transparent.png" />
+    <None Include="Resources\TrainStationArt.gif" />
     <None Include="Resources\Matcha Icon.png" />
     <None Include="Resources\Matcha Logo Combo Transparent.png" />
   </ItemGroup>

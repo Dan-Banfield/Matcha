@@ -93,9 +93,29 @@ namespace Matcha.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Matcha_Logo_Icon_Transparent {
+            get {
+                object obj = ResourceManager.GetObject("Matcha Logo Icon Transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MinimizeIcon {
             get {
                 object obj = ResourceManager.GetObject("MinimizeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrainStationArt {
+            get {
+                object obj = ResourceManager.GetObject("TrainStationArt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
