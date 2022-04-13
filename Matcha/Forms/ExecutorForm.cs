@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Diagnostics;
 using Matcha.Generics;
+using System.Drawing;
 
 namespace Matcha.Forms
 {
@@ -52,12 +53,44 @@ namespace Matcha.Forms
         private void InitializeForm()
         {
             SetUpDiscordRPC();
+            EnableResizing();
+        }
+
+        private void EnableResizing()
+        {
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+        }
+
+        private const int cGrip = 16;
+        private const int cCaption = 32;
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x84)
+            {
+                Point pos = new Point(m.LParam.ToInt32());
+                pos = this.PointToClient(pos);
+
+                if (pos.Y < cCaption)
+                {
+                    m.Result = (IntPtr)2;
+                    return;
+                }
+
+                if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
+                {
+                    m.Result = (IntPtr)17;
+                    return;
+                }
+            }
+            base.WndProc(ref m);
         }
 
         private void SetUpDiscordRPC()
         {
             try
             {
+                //TODO: Change this status.
                 discordRPCManager = new DiscordRPCManager("963719187845513216");
                 discordRPCManager.UpdateStatus("Developing Matcha");
             }

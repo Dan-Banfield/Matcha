@@ -54,6 +54,11 @@ namespace Matcha.Forms
 
         private void AttemptLogin()
         {
+#if DEBUG
+            SuccessfulLogin();
+            return;
+#endif
+
             if (string.IsNullOrWhiteSpace(serialKey))
             {
                 if (GetSerialKey()) { SubmitKey(); }
