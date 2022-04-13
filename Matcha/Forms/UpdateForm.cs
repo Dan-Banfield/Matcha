@@ -20,6 +20,7 @@ namespace Matcha.Forms
         public UpdateForm()
         {
             InitializeComponent();
+            InitializeForm();
             CheckForUpdates();
         }
 
@@ -49,6 +50,11 @@ namespace Matcha.Forms
         #endregion
 
         #region Methods
+
+        private void InitializeForm()
+        {
+            bigLogoImageBox.Parent = backgroundGifPictureBox;
+        }
 
         private async void CheckForUpdates()
         {

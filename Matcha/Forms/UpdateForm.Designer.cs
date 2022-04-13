@@ -32,16 +32,16 @@ namespace Matcha.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateForm));
             this.windowDragPanel = new System.Windows.Forms.Panel();
-            this.windowElipse = new ns1.SiticoneElipse(this.components);
-            this.bigLogoImageBox = new System.Windows.Forms.PictureBox();
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
+            this.windowElipse = new ns1.SiticoneElipse(this.components);
+            this.bigLogoImageBox = new System.Windows.Forms.PictureBox();
             this.backgroundGifPictureBox = new System.Windows.Forms.PictureBox();
             this.logoElipse = new ns1.SiticoneElipse(this.components);
             this.windowDragPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundGifPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,22 +58,6 @@ namespace Matcha.Forms
             this.windowDragPanel.Size = new System.Drawing.Size(390, 32);
             this.windowDragPanel.TabIndex = 0;
             this.windowDragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowDragPanel_MouseDown);
-            // 
-            // windowElipse
-            // 
-            this.windowElipse.TargetControl = this;
-            // 
-            // bigLogoImageBox
-            // 
-            this.bigLogoImageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bigLogoImageBox.BackColor = System.Drawing.Color.Transparent;
-            this.bigLogoImageBox.Image = global::Matcha.Properties.Resources.Matcha_Icon;
-            this.bigLogoImageBox.Location = new System.Drawing.Point(114, 77);
-            this.bigLogoImageBox.Name = "bigLogoImageBox";
-            this.bigLogoImageBox.Size = new System.Drawing.Size(163, 94);
-            this.bigLogoImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bigLogoImageBox.TabIndex = 2;
-            this.bigLogoImageBox.TabStop = false;
             // 
             // logoImageBox
             // 
@@ -125,6 +109,22 @@ namespace Matcha.Forms
             this.closeButton.TabIndex = 1;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // windowElipse
+            // 
+            this.windowElipse.TargetControl = this;
+            // 
+            // bigLogoImageBox
+            // 
+            this.bigLogoImageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bigLogoImageBox.BackColor = System.Drawing.Color.Transparent;
+            this.bigLogoImageBox.Image = global::Matcha.Properties.Resources.Matcha_Logo_Icon_Transparent_Readability_Improved;
+            this.bigLogoImageBox.Location = new System.Drawing.Point(92, 36);
+            this.bigLogoImageBox.Name = "bigLogoImageBox";
+            this.bigLogoImageBox.Size = new System.Drawing.Size(206, 183);
+            this.bigLogoImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bigLogoImageBox.TabIndex = 2;
+            this.bigLogoImageBox.TabStop = false;
+            // 
             // backgroundGifPictureBox
             // 
             this.backgroundGifPictureBox.Image = global::Matcha.Properties.Resources.TrainStationArt;
@@ -153,8 +153,8 @@ namespace Matcha.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Updater";
             this.windowDragPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundGifPictureBox)).EndInit();
             this.ResumeLayout(false);
 
