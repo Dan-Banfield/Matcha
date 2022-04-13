@@ -47,6 +47,8 @@ namespace Matcha.Forms
 
         #region Methods
 
+        #region Initialization
+
         private void InitializeForm()
         {
             SetUpDiscordRPC();
@@ -61,6 +63,8 @@ namespace Matcha.Forms
             }
             catch { return; }
         }
+
+        #endregion
 
         #endregion
     }

@@ -174,6 +174,7 @@ namespace Matcha.Forms
             this.getKeyButton.Size = new System.Drawing.Size(421, 32);
             this.getKeyButton.TabIndex = 4;
             this.getKeyButton.Text = "Get Key";
+            this.getKeyButton.Click += new System.EventHandler(this.getKeyButton_Click);
             // 
             // LoginForm
             // 
