@@ -119,9 +119,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Assets\Images\AttachIcon.png" />
     <Content Include="Assets\Images\CloseIcon.png" />
     <None Include="Assets\Images\ExecuteIcon.png" />
     <Content Include="Assets\Images\MinimizeIcon.png" />
+    <None Include="Assets\Images\SaveIcon.png" />
+    <None Include="Assets\Images\OpenFolderIcon.png" />
+    <None Include="Assets\Images\SettingsIcon.png" />
     <Content Include="Matcha Icon.ico" />
     <None Include="Resources\Matcha Logo Icon Transparent Readability Improved.png" />
     <None Include="Resources\Matcha Logo Icon Transparent.png" />

@@ -34,17 +34,17 @@ namespace Matcha.Forms
             this.windowDragPanel = new System.Windows.Forms.Panel();
             this.windowElipse = new ns1.SiticoneElipse(this.components);
             this.bottomPanel = new System.Windows.Forms.Panel();
-            this.executeButton = new ns1.SiticoneButton();
+            this.bottomBorderElipse = new ns1.SiticoneElipse(this.components);
+            this.verticalSeperator = new System.Windows.Forms.Label();
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
-            this.bottomBorderElipse = new ns1.SiticoneElipse(this.components);
-            this.siticoneButton1 = new ns1.SiticoneButton();
-            this.siticoneButton2 = new ns1.SiticoneButton();
-            this.siticoneButton3 = new ns1.SiticoneButton();
-            this.siticoneButton4 = new ns1.SiticoneButton();
+            this.settingsButton = new ns1.SiticoneButton();
             this.siticoneButton5 = new ns1.SiticoneButton();
-            this.verticalSeperator = new System.Windows.Forms.Label();
+            this.attachButton = new ns1.SiticoneButton();
+            this.openScriptButton = new ns1.SiticoneButton();
+            this.saveScriptButton = new ns1.SiticoneButton();
+            this.executeButton = new ns1.SiticoneButton();
             this.windowDragPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
@@ -73,36 +73,29 @@ namespace Matcha.Forms
             this.bottomPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.bottomPanel.Controls.Add(this.verticalSeperator);
-            this.bottomPanel.Controls.Add(this.siticoneButton4);
+            this.bottomPanel.Controls.Add(this.settingsButton);
             this.bottomPanel.Controls.Add(this.siticoneButton5);
-            this.bottomPanel.Controls.Add(this.siticoneButton3);
-            this.bottomPanel.Controls.Add(this.siticoneButton2);
-            this.bottomPanel.Controls.Add(this.siticoneButton1);
+            this.bottomPanel.Controls.Add(this.attachButton);
+            this.bottomPanel.Controls.Add(this.openScriptButton);
+            this.bottomPanel.Controls.Add(this.saveScriptButton);
             this.bottomPanel.Controls.Add(this.executeButton);
             this.bottomPanel.Location = new System.Drawing.Point(389, 295);
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(263, 32);
             this.bottomPanel.TabIndex = 3;
             // 
-            // executeButton
+            // bottomBorderElipse
             // 
-            this.executeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.executeButton.BorderRadius = 3;
-            this.executeButton.CheckedState.Parent = this.executeButton;
-            this.executeButton.CustomImages.Parent = this.executeButton;
-            this.executeButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.executeButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.executeButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.executeButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
-            this.executeButton.HoveredState.Parent = this.executeButton;
-            this.executeButton.Image = global::Matcha.Properties.Resources.ExecuteIcon;
-            this.executeButton.ImageSize = new System.Drawing.Size(17, 17);
-            this.executeButton.Location = new System.Drawing.Point(22, 3);
-            this.executeButton.Name = "executeButton";
-            this.executeButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.executeButton.ShadowDecoration.Parent = this.executeButton;
-            this.executeButton.Size = new System.Drawing.Size(27, 26);
-            this.executeButton.TabIndex = 4;
+            this.bottomBorderElipse.TargetControl = this.bottomPanel;
+            // 
+            // verticalSeperator
+            // 
+            this.verticalSeperator.BackColor = System.Drawing.Color.Gainsboro;
+            this.verticalSeperator.ForeColor = System.Drawing.Color.Transparent;
+            this.verticalSeperator.Location = new System.Drawing.Point(161, 8);
+            this.verticalSeperator.Name = "verticalSeperator";
+            this.verticalSeperator.Size = new System.Drawing.Size(1, 18);
+            this.verticalSeperator.TabIndex = 4;
             // 
             // logoImageBox
             // 
@@ -154,89 +147,25 @@ namespace Matcha.Forms
             this.closeButton.TabIndex = 1;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // bottomBorderElipse
+            // settingsButton
             // 
-            this.bottomBorderElipse.TargetControl = this.bottomPanel;
-            // 
-            // siticoneButton1
-            // 
-            this.siticoneButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.siticoneButton1.BorderRadius = 3;
-            this.siticoneButton1.CheckedState.Parent = this.siticoneButton1;
-            this.siticoneButton1.CustomImages.Parent = this.siticoneButton1;
-            this.siticoneButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.siticoneButton1.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
-            this.siticoneButton1.HoveredState.Parent = this.siticoneButton1;
-            this.siticoneButton1.Image = global::Matcha.Properties.Resources.ExecuteIcon;
-            this.siticoneButton1.ImageSize = new System.Drawing.Size(17, 17);
-            this.siticoneButton1.Location = new System.Drawing.Point(55, 3);
-            this.siticoneButton1.Name = "siticoneButton1";
-            this.siticoneButton1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.siticoneButton1.ShadowDecoration.Parent = this.siticoneButton1;
-            this.siticoneButton1.Size = new System.Drawing.Size(27, 26);
-            this.siticoneButton1.TabIndex = 5;
-            // 
-            // siticoneButton2
-            // 
-            this.siticoneButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.siticoneButton2.BorderRadius = 3;
-            this.siticoneButton2.CheckedState.Parent = this.siticoneButton2;
-            this.siticoneButton2.CustomImages.Parent = this.siticoneButton2;
-            this.siticoneButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.siticoneButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneButton2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.siticoneButton2.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
-            this.siticoneButton2.HoveredState.Parent = this.siticoneButton2;
-            this.siticoneButton2.Image = global::Matcha.Properties.Resources.ExecuteIcon;
-            this.siticoneButton2.ImageSize = new System.Drawing.Size(17, 17);
-            this.siticoneButton2.Location = new System.Drawing.Point(88, 3);
-            this.siticoneButton2.Name = "siticoneButton2";
-            this.siticoneButton2.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.siticoneButton2.ShadowDecoration.Parent = this.siticoneButton2;
-            this.siticoneButton2.Size = new System.Drawing.Size(27, 26);
-            this.siticoneButton2.TabIndex = 6;
-            // 
-            // siticoneButton3
-            // 
-            this.siticoneButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.siticoneButton3.BorderRadius = 3;
-            this.siticoneButton3.CheckedState.Parent = this.siticoneButton3;
-            this.siticoneButton3.CustomImages.Parent = this.siticoneButton3;
-            this.siticoneButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.siticoneButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneButton3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.siticoneButton3.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
-            this.siticoneButton3.HoveredState.Parent = this.siticoneButton3;
-            this.siticoneButton3.Image = global::Matcha.Properties.Resources.ExecuteIcon;
-            this.siticoneButton3.ImageSize = new System.Drawing.Size(17, 17);
-            this.siticoneButton3.Location = new System.Drawing.Point(121, 3);
-            this.siticoneButton3.Name = "siticoneButton3";
-            this.siticoneButton3.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.siticoneButton3.ShadowDecoration.Parent = this.siticoneButton3;
-            this.siticoneButton3.Size = new System.Drawing.Size(27, 26);
-            this.siticoneButton3.TabIndex = 7;
-            // 
-            // siticoneButton4
-            // 
-            this.siticoneButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.siticoneButton4.BorderRadius = 3;
-            this.siticoneButton4.CheckedState.Parent = this.siticoneButton4;
-            this.siticoneButton4.CustomImages.Parent = this.siticoneButton4;
-            this.siticoneButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.siticoneButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneButton4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.siticoneButton4.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
-            this.siticoneButton4.HoveredState.Parent = this.siticoneButton4;
-            this.siticoneButton4.Image = global::Matcha.Properties.Resources.ExecuteIcon;
-            this.siticoneButton4.ImageSize = new System.Drawing.Size(17, 17);
-            this.siticoneButton4.Location = new System.Drawing.Point(214, 3);
-            this.siticoneButton4.Name = "siticoneButton4";
-            this.siticoneButton4.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.siticoneButton4.ShadowDecoration.Parent = this.siticoneButton4;
-            this.siticoneButton4.Size = new System.Drawing.Size(27, 26);
-            this.siticoneButton4.TabIndex = 9;
+            this.settingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.settingsButton.BorderRadius = 3;
+            this.settingsButton.CheckedState.Parent = this.settingsButton;
+            this.settingsButton.CustomImages.Parent = this.settingsButton;
+            this.settingsButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.settingsButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.settingsButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.settingsButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.settingsButton.HoveredState.Parent = this.settingsButton;
+            this.settingsButton.Image = global::Matcha.Properties.Resources.SettingsIcon;
+            this.settingsButton.ImageSize = new System.Drawing.Size(21, 21);
+            this.settingsButton.Location = new System.Drawing.Point(214, 3);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.settingsButton.ShadowDecoration.Parent = this.settingsButton;
+            this.settingsButton.Size = new System.Drawing.Size(27, 26);
+            this.settingsButton.TabIndex = 9;
             // 
             // siticoneButton5
             // 
@@ -258,14 +187,86 @@ namespace Matcha.Forms
             this.siticoneButton5.Size = new System.Drawing.Size(27, 26);
             this.siticoneButton5.TabIndex = 8;
             // 
-            // verticalSeperator
+            // attachButton
             // 
-            this.verticalSeperator.BackColor = System.Drawing.Color.Gainsboro;
-            this.verticalSeperator.ForeColor = System.Drawing.Color.Transparent;
-            this.verticalSeperator.Location = new System.Drawing.Point(161, 8);
-            this.verticalSeperator.Name = "verticalSeperator";
-            this.verticalSeperator.Size = new System.Drawing.Size(1, 18);
-            this.verticalSeperator.TabIndex = 4;
+            this.attachButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.attachButton.BorderRadius = 3;
+            this.attachButton.CheckedState.Parent = this.attachButton;
+            this.attachButton.CustomImages.Parent = this.attachButton;
+            this.attachButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.attachButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.attachButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.attachButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.attachButton.HoveredState.Parent = this.attachButton;
+            this.attachButton.Image = global::Matcha.Properties.Resources.AttachIcon;
+            this.attachButton.Location = new System.Drawing.Point(121, 3);
+            this.attachButton.Name = "attachButton";
+            this.attachButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.attachButton.ShadowDecoration.Parent = this.attachButton;
+            this.attachButton.Size = new System.Drawing.Size(27, 26);
+            this.attachButton.TabIndex = 7;
+            // 
+            // openScriptButton
+            // 
+            this.openScriptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.openScriptButton.BorderRadius = 3;
+            this.openScriptButton.CheckedState.Parent = this.openScriptButton;
+            this.openScriptButton.CustomImages.Parent = this.openScriptButton;
+            this.openScriptButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.openScriptButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.openScriptButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.openScriptButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.openScriptButton.HoveredState.Parent = this.openScriptButton;
+            this.openScriptButton.Image = global::Matcha.Properties.Resources.OpenFolderIcon;
+            this.openScriptButton.ImageOffset = new System.Drawing.Point(0, -1);
+            this.openScriptButton.ImageSize = new System.Drawing.Size(19, 19);
+            this.openScriptButton.Location = new System.Drawing.Point(88, 3);
+            this.openScriptButton.Name = "openScriptButton";
+            this.openScriptButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.openScriptButton.ShadowDecoration.Parent = this.openScriptButton;
+            this.openScriptButton.Size = new System.Drawing.Size(27, 26);
+            this.openScriptButton.TabIndex = 6;
+            // 
+            // saveScriptButton
+            // 
+            this.saveScriptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveScriptButton.BorderRadius = 3;
+            this.saveScriptButton.CheckedState.Parent = this.saveScriptButton;
+            this.saveScriptButton.CustomImages.Parent = this.saveScriptButton;
+            this.saveScriptButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.saveScriptButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.saveScriptButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.saveScriptButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.saveScriptButton.HoveredState.Parent = this.saveScriptButton;
+            this.saveScriptButton.Image = global::Matcha.Properties.Resources.SaveIcon;
+            this.saveScriptButton.ImageOffset = new System.Drawing.Point(0, -1);
+            this.saveScriptButton.ImageSize = new System.Drawing.Size(19, 19);
+            this.saveScriptButton.Location = new System.Drawing.Point(55, 3);
+            this.saveScriptButton.Name = "saveScriptButton";
+            this.saveScriptButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.saveScriptButton.ShadowDecoration.Parent = this.saveScriptButton;
+            this.saveScriptButton.Size = new System.Drawing.Size(27, 26);
+            this.saveScriptButton.TabIndex = 5;
+            // 
+            // executeButton
+            // 
+            this.executeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.executeButton.BorderRadius = 3;
+            this.executeButton.CheckedState.Parent = this.executeButton;
+            this.executeButton.CustomImages.Parent = this.executeButton;
+            this.executeButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.executeButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.executeButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.executeButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.executeButton.HoveredState.Parent = this.executeButton;
+            this.executeButton.Image = global::Matcha.Properties.Resources.ExecuteIcon;
+            this.executeButton.ImageSize = new System.Drawing.Size(17, 17);
+            this.executeButton.Location = new System.Drawing.Point(22, 3);
+            this.executeButton.Name = "executeButton";
+            this.executeButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.executeButton.ShadowDecoration.Parent = this.executeButton;
+            this.executeButton.Size = new System.Drawing.Size(27, 26);
+            this.executeButton.TabIndex = 4;
             // 
             // ExecutorForm
             // 
@@ -298,10 +299,10 @@ namespace Matcha.Forms
         private ns1.SiticoneButton executeButton;
         private System.Windows.Forms.Panel bottomPanel;
         private ns1.SiticoneElipse bottomBorderElipse;
-        private ns1.SiticoneButton siticoneButton1;
-        private ns1.SiticoneButton siticoneButton3;
-        private ns1.SiticoneButton siticoneButton2;
-        private ns1.SiticoneButton siticoneButton4;
+        private ns1.SiticoneButton saveScriptButton;
+        private ns1.SiticoneButton attachButton;
+        private ns1.SiticoneButton openScriptButton;
+        private ns1.SiticoneButton settingsButton;
         private ns1.SiticoneButton siticoneButton5;
         private System.Windows.Forms.Label verticalSeperator;
     }
