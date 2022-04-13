@@ -32,24 +32,24 @@ namespace Matcha.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExecutorForm));
             this.windowDragPanel = new System.Windows.Forms.Panel();
-            this.windowElipse = new ns1.SiticoneElipse(this.components);
-            this.bottomPanel = new System.Windows.Forms.Panel();
-            this.bottomBorderElipse = new ns1.SiticoneElipse(this.components);
-            this.verticalSeperator = new System.Windows.Forms.Label();
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
+            this.windowElipse = new ns1.SiticoneElipse(this.components);
+            this.bottomPanel = new System.Windows.Forms.Panel();
+            this.verticalSeperator = new System.Windows.Forms.Label();
             this.settingsButton = new ns1.SiticoneButton();
             this.scriptHubButton = new ns1.SiticoneButton();
             this.attachButton = new ns1.SiticoneButton();
             this.openScriptButton = new ns1.SiticoneButton();
             this.saveScriptButton = new ns1.SiticoneButton();
             this.executeButton = new ns1.SiticoneButton();
+            this.bottomBorderElipse = new ns1.SiticoneElipse(this.components);
             this.monaco = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.monacoElipse = new ns1.SiticoneElipse(this.components);
             this.windowDragPanel.SuspendLayout();
-            this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
+            this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monaco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,39 +66,6 @@ namespace Matcha.Forms
             this.windowDragPanel.Size = new System.Drawing.Size(668, 32);
             this.windowDragPanel.TabIndex = 0;
             this.windowDragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowDragPanel_MouseDown);
-            // 
-            // windowElipse
-            // 
-            this.windowElipse.TargetControl = this;
-            // 
-            // bottomPanel
-            // 
-            this.bottomPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.bottomPanel.Controls.Add(this.verticalSeperator);
-            this.bottomPanel.Controls.Add(this.settingsButton);
-            this.bottomPanel.Controls.Add(this.scriptHubButton);
-            this.bottomPanel.Controls.Add(this.attachButton);
-            this.bottomPanel.Controls.Add(this.openScriptButton);
-            this.bottomPanel.Controls.Add(this.saveScriptButton);
-            this.bottomPanel.Controls.Add(this.executeButton);
-            this.bottomPanel.Location = new System.Drawing.Point(389, 295);
-            this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(263, 32);
-            this.bottomPanel.TabIndex = 3;
-            // 
-            // bottomBorderElipse
-            // 
-            this.bottomBorderElipse.TargetControl = this.bottomPanel;
-            // 
-            // verticalSeperator
-            // 
-            this.verticalSeperator.BackColor = System.Drawing.Color.Gainsboro;
-            this.verticalSeperator.ForeColor = System.Drawing.Color.Transparent;
-            this.verticalSeperator.Location = new System.Drawing.Point(161, 7);
-            this.verticalSeperator.Name = "verticalSeperator";
-            this.verticalSeperator.Size = new System.Drawing.Size(1, 18);
-            this.verticalSeperator.TabIndex = 4;
             // 
             // logoImageBox
             // 
@@ -149,6 +116,35 @@ namespace Matcha.Forms
             this.closeButton.Size = new System.Drawing.Size(50, 32);
             this.closeButton.TabIndex = 1;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // windowElipse
+            // 
+            this.windowElipse.TargetControl = this;
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.bottomPanel.Controls.Add(this.verticalSeperator);
+            this.bottomPanel.Controls.Add(this.settingsButton);
+            this.bottomPanel.Controls.Add(this.scriptHubButton);
+            this.bottomPanel.Controls.Add(this.attachButton);
+            this.bottomPanel.Controls.Add(this.openScriptButton);
+            this.bottomPanel.Controls.Add(this.saveScriptButton);
+            this.bottomPanel.Controls.Add(this.executeButton);
+            this.bottomPanel.Location = new System.Drawing.Point(389, 295);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(263, 32);
+            this.bottomPanel.TabIndex = 3;
+            // 
+            // verticalSeperator
+            // 
+            this.verticalSeperator.BackColor = System.Drawing.Color.Gainsboro;
+            this.verticalSeperator.ForeColor = System.Drawing.Color.Transparent;
+            this.verticalSeperator.Location = new System.Drawing.Point(161, 7);
+            this.verticalSeperator.Name = "verticalSeperator";
+            this.verticalSeperator.Size = new System.Drawing.Size(1, 18);
+            this.verticalSeperator.TabIndex = 4;
             // 
             // settingsButton
             // 
@@ -270,18 +266,26 @@ namespace Matcha.Forms
             this.executeButton.Size = new System.Drawing.Size(27, 26);
             this.executeButton.TabIndex = 4;
             // 
+            // bottomBorderElipse
+            // 
+            this.bottomBorderElipse.TargetControl = this.bottomPanel;
+            // 
             // monaco
             // 
             this.monaco.AllowExternalDrop = true;
+            this.monaco.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.monaco.CreationProperties = null;
             this.monaco.DefaultBackgroundColor = System.Drawing.Color.White;
             this.monaco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.monaco.Location = new System.Drawing.Point(12, 48);
+            this.monaco.Location = new System.Drawing.Point(12, 50);
             this.monaco.Name = "monaco";
-            this.monaco.Size = new System.Drawing.Size(492, 231);
-            this.monaco.Source = new System.Uri("file:///Monaco/Monaco.html", System.UriKind.Absolute);
+            this.monaco.Size = new System.Drawing.Size(459, 231);
+            this.monaco.Source = new System.Uri("file:\\\\\\", System.UriKind.Absolute);
             this.monaco.TabIndex = 4;
             this.monaco.ZoomFactor = 1D;
+            this.monaco.CoreWebView2InitializationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs>(this.monaco_CoreWebView2InitializationCompleted);
             // 
             // monacoElipse
             // 
@@ -303,8 +307,8 @@ namespace Matcha.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Executor";
             this.windowDragPanel.ResumeLayout(false);
-            this.bottomPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
+            this.bottomPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.monaco)).EndInit();
             this.ResumeLayout(false);
 

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Matcha.Generics;
 using System.Drawing;
+using System.IO;
 
 namespace Matcha.Forms
 {
@@ -95,6 +96,13 @@ namespace Matcha.Forms
                 discordRPCManager.UpdateStatus("Developing Matcha");
             }
             catch { return; }
+        }
+
+        private void monaco_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e) => LoadMonaco();
+
+        private void LoadMonaco()
+        {
+            monaco.Source = new Uri(@"file:///" + Directory.GetCurrentDirectory() + @"\Monaco\Monaco.html");
         }
 
         #endregion
