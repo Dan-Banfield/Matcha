@@ -51,7 +51,7 @@ namespace Matcha.Forms
             this.windowDragPanel.Controls.Add(this.closeButton);
             this.windowDragPanel.Location = new System.Drawing.Point(0, 0);
             this.windowDragPanel.Name = "windowDragPanel";
-            this.windowDragPanel.Size = new System.Drawing.Size(605, 32);
+            this.windowDragPanel.Size = new System.Drawing.Size(603, 32);
             this.windowDragPanel.TabIndex = 0;
             this.windowDragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowDragPanel_MouseDown);
             // 
@@ -77,7 +77,7 @@ namespace Matcha.Forms
             this.minimizeButton.HoveredState.Parent = this.minimizeButton;
             this.minimizeButton.Image = global::Matcha.Properties.Resources.MinimizeIcon;
             this.minimizeButton.ImageSize = new System.Drawing.Size(15, 20);
-            this.minimizeButton.Location = new System.Drawing.Point(505, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(503, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
@@ -97,7 +97,7 @@ namespace Matcha.Forms
             this.closeButton.HoveredState.Parent = this.closeButton;
             this.closeButton.Image = global::Matcha.Properties.Resources.CloseIcon;
             this.closeButton.ImageSize = new System.Drawing.Size(14, 14);
-            this.closeButton.Location = new System.Drawing.Point(555, 0);
+            this.closeButton.Location = new System.Drawing.Point(553, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.PressedColor = System.Drawing.Color.Red;
             this.closeButton.ShadowDecoration.Parent = this.closeButton;
@@ -120,7 +120,7 @@ namespace Matcha.Forms
             this.demoButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
             this.demoButton.HoveredState.Parent = this.demoButton;
             this.demoButton.ImageSize = new System.Drawing.Size(15, 20);
-            this.demoButton.Location = new System.Drawing.Point(92, 275);
+            this.demoButton.Location = new System.Drawing.Point(83, 254);
             this.demoButton.Name = "demoButton";
             this.demoButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.demoButton.ShadowDecoration.Parent = this.demoButton;
@@ -133,12 +133,13 @@ namespace Matcha.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(605, 337);
+            this.ClientSize = new System.Drawing.Size(603, 308);
             this.Controls.Add(this.demoButton);
             this.Controls.Add(this.windowDragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExecutorForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Login";
             this.windowDragPanel.ResumeLayout(false);
