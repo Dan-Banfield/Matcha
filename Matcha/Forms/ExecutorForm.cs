@@ -1,14 +1,23 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Matcha.Generics;
 
 namespace Matcha.Forms
 {
-    public partial class LoginForm : Form
+    public partial class ExecutorForm : Form
     {
-        public LoginForm()
+
+        #region Properties
+
+        private DiscordRPCManager discordRPCManager;
+
+        #endregion
+
+        public ExecutorForm()
         {
             InitializeComponent();
+            InitializeForm();
         }
 
         #region Form Event Handlers
@@ -34,7 +43,24 @@ namespace Matcha.Forms
         private void closeButton_Click(object sender, EventArgs e) => Process.GetCurrentProcess().Kill();
         private void minimizeButton_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 
-        private void loginButton_Click(object sender, EventArgs e) { this.Hide(); new ExecutorForm().Show(); }
+        #endregion
+
+        #region Methods
+
+        private void InitializeForm()
+        {
+            SetUpDiscordRPC();
+        }
+
+        private void SetUpDiscordRPC()
+        {
+            try
+            {
+                discordRPCManager = new DiscordRPCManager("963719187845513216");
+                discordRPCManager.UpdateStatus("Developing Matcha");
+            }
+            catch { return; }
+        }
 
         #endregion
     }

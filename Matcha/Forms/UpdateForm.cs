@@ -113,6 +113,11 @@ namespace Matcha.Forms
             HandleUpdateResponse(updateStatus);
             ShowAnnouncements();
 
+            LoadLoginForm();
+        }
+
+        private void LoadLoginForm()
+        {
             this.Hide();
             new LoginForm().Show();
         }
