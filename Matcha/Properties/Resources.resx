@@ -121,8 +121,8 @@
   <data name="Matcha Logo Icon Transparent Readability Improved" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Matcha Logo Icon Transparent Readability Improved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CloseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\CloseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SettingsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Images\SettingsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MinimizeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\MinimizeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,28 +130,31 @@
   <data name="AttachIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\AttachIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Matcha Logo Icon Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Matcha Logo Icon Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TrainStationArt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TrainStationArt.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OpenFolderIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\OpenFolderIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Matcha Logo Combo Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Matcha Logo Combo Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SaveIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\SaveIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Matcha Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Matcha Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExecuteIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\ExecuteIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Matcha Logo Icon Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Matcha Logo Icon Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Matcha Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Matcha Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SettingsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\SettingsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CloseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Images\CloseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Matcha Logo Combo Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Matcha Logo Combo Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScriptHubIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Images\ScriptHubIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

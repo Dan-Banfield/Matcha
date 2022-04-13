@@ -40,7 +40,7 @@ namespace Matcha.Forms
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
             this.settingsButton = new ns1.SiticoneButton();
-            this.siticoneButton5 = new ns1.SiticoneButton();
+            this.scriptHubButton = new ns1.SiticoneButton();
             this.attachButton = new ns1.SiticoneButton();
             this.openScriptButton = new ns1.SiticoneButton();
             this.saveScriptButton = new ns1.SiticoneButton();
@@ -74,7 +74,7 @@ namespace Matcha.Forms
             this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.bottomPanel.Controls.Add(this.verticalSeperator);
             this.bottomPanel.Controls.Add(this.settingsButton);
-            this.bottomPanel.Controls.Add(this.siticoneButton5);
+            this.bottomPanel.Controls.Add(this.scriptHubButton);
             this.bottomPanel.Controls.Add(this.attachButton);
             this.bottomPanel.Controls.Add(this.openScriptButton);
             this.bottomPanel.Controls.Add(this.saveScriptButton);
@@ -92,7 +92,7 @@ namespace Matcha.Forms
             // 
             this.verticalSeperator.BackColor = System.Drawing.Color.Gainsboro;
             this.verticalSeperator.ForeColor = System.Drawing.Color.Transparent;
-            this.verticalSeperator.Location = new System.Drawing.Point(161, 8);
+            this.verticalSeperator.Location = new System.Drawing.Point(161, 7);
             this.verticalSeperator.Name = "verticalSeperator";
             this.verticalSeperator.Size = new System.Drawing.Size(1, 18);
             this.verticalSeperator.TabIndex = 4;
@@ -167,25 +167,24 @@ namespace Matcha.Forms
             this.settingsButton.Size = new System.Drawing.Size(27, 26);
             this.settingsButton.TabIndex = 9;
             // 
-            // siticoneButton5
+            // scriptHubButton
             // 
-            this.siticoneButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.siticoneButton5.BorderRadius = 3;
-            this.siticoneButton5.CheckedState.Parent = this.siticoneButton5;
-            this.siticoneButton5.CustomImages.Parent = this.siticoneButton5;
-            this.siticoneButton5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.siticoneButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneButton5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.siticoneButton5.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
-            this.siticoneButton5.HoveredState.Parent = this.siticoneButton5;
-            this.siticoneButton5.Image = global::Matcha.Properties.Resources.ExecuteIcon;
-            this.siticoneButton5.ImageSize = new System.Drawing.Size(17, 17);
-            this.siticoneButton5.Location = new System.Drawing.Point(181, 3);
-            this.siticoneButton5.Name = "siticoneButton5";
-            this.siticoneButton5.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.siticoneButton5.ShadowDecoration.Parent = this.siticoneButton5;
-            this.siticoneButton5.Size = new System.Drawing.Size(27, 26);
-            this.siticoneButton5.TabIndex = 8;
+            this.scriptHubButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.scriptHubButton.BorderRadius = 3;
+            this.scriptHubButton.CheckedState.Parent = this.scriptHubButton;
+            this.scriptHubButton.CustomImages.Parent = this.scriptHubButton;
+            this.scriptHubButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.scriptHubButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.scriptHubButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.scriptHubButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
+            this.scriptHubButton.HoveredState.Parent = this.scriptHubButton;
+            this.scriptHubButton.Image = global::Matcha.Properties.Resources.ScriptHubIcon;
+            this.scriptHubButton.Location = new System.Drawing.Point(181, 3);
+            this.scriptHubButton.Name = "scriptHubButton";
+            this.scriptHubButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.scriptHubButton.ShadowDecoration.Parent = this.scriptHubButton;
+            this.scriptHubButton.Size = new System.Drawing.Size(27, 26);
+            this.scriptHubButton.TabIndex = 8;
             // 
             // attachButton
             // 
@@ -303,7 +302,7 @@ namespace Matcha.Forms
         private ns1.SiticoneButton attachButton;
         private ns1.SiticoneButton openScriptButton;
         private ns1.SiticoneButton settingsButton;
-        private ns1.SiticoneButton siticoneButton5;
+        private ns1.SiticoneButton scriptHubButton;
         private System.Windows.Forms.Label verticalSeperator;
     }
 }

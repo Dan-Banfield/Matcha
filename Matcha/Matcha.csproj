@@ -126,6 +126,7 @@
     <None Include="Assets\Images\SaveIcon.png" />
     <None Include="Assets\Images\OpenFolderIcon.png" />
     <None Include="Assets\Images\SettingsIcon.png" />
+    <None Include="Assets\Images\ScriptHubIcon.png" />
     <Content Include="Matcha Icon.ico" />
     <None Include="Resources\Matcha Logo Icon Transparent Readability Improved.png" />
     <None Include="Resources\Matcha Logo Icon Transparent.png" />
