@@ -45,9 +45,12 @@ namespace Matcha.Forms
             this.openScriptButton = new ns1.SiticoneButton();
             this.saveScriptButton = new ns1.SiticoneButton();
             this.executeButton = new ns1.SiticoneButton();
+            this.monaco = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.monacoElipse = new ns1.SiticoneElipse(this.components);
             this.windowDragPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monaco)).BeginInit();
             this.SuspendLayout();
             // 
             // windowDragPanel
@@ -267,12 +270,30 @@ namespace Matcha.Forms
             this.executeButton.Size = new System.Drawing.Size(27, 26);
             this.executeButton.TabIndex = 4;
             // 
+            // monaco
+            // 
+            this.monaco.AllowExternalDrop = true;
+            this.monaco.CreationProperties = null;
+            this.monaco.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.monaco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.monaco.Location = new System.Drawing.Point(12, 48);
+            this.monaco.Name = "monaco";
+            this.monaco.Size = new System.Drawing.Size(492, 231);
+            this.monaco.Source = new System.Uri("file:///Monaco/Monaco.html", System.UriKind.Absolute);
+            this.monaco.TabIndex = 4;
+            this.monaco.ZoomFactor = 1D;
+            // 
+            // monacoElipse
+            // 
+            this.monacoElipse.TargetControl = this.monaco;
+            // 
             // ExecutorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(668, 339);
+            this.Controls.Add(this.monaco);
             this.Controls.Add(this.windowDragPanel);
             this.Controls.Add(this.bottomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -280,10 +301,11 @@ namespace Matcha.Forms
             this.Name = "ExecutorForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Matcha - Login";
+            this.Text = "Matcha - Executor";
             this.windowDragPanel.ResumeLayout(false);
             this.bottomPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monaco)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,6 +326,8 @@ namespace Matcha.Forms
         private ns1.SiticoneButton settingsButton;
         private ns1.SiticoneButton scriptHubButton;
         private System.Windows.Forms.Label verticalSeperator;
+        private Microsoft.Web.WebView2.WinForms.WebView2 monaco;
+        private ns1.SiticoneElipse monacoElipse;
     }
 }
 
