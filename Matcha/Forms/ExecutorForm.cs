@@ -42,6 +42,15 @@ namespace Matcha.Forms
             }
         }
 
+        private void attachedStatusLabel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
         private void closeButton_Click(object sender, EventArgs e) => Process.GetCurrentProcess().Kill();
         private void minimizeButton_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 

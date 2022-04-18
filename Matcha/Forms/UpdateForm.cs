@@ -11,7 +11,7 @@ namespace Matcha.Forms
     public partial class UpdateForm : Form
     {
         private const string UPDATE_INFO_ENDPOINT = "https://raw.githubusercontent.com/Dan-Banfield/Json-Update-Files/main/MatchaUpdateInfo.json";
-        private const double CURRENT_VERSION = 1.0;
+        public const double CURRENT_VERSION = 1.0;
 
         private enum UpdateStatus { UpdatesAvailable, NoUpdatesAvailable, CheckFailed }
 

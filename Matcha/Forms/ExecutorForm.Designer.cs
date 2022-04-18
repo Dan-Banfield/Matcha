@@ -32,6 +32,7 @@ namespace Matcha.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExecutorForm));
             this.windowDragPanel = new System.Windows.Forms.Panel();
+            this.attachedStatusLabel = new System.Windows.Forms.Label();
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
@@ -47,6 +48,8 @@ namespace Matcha.Forms
             this.bottomBorderElipse = new ns1.SiticoneElipse(this.components);
             this.monaco = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.monacoElipse = new ns1.SiticoneElipse(this.components);
+            this.scriptListView = new System.Windows.Forms.ListView();
+            this.scriptListElipse = new ns1.SiticoneElipse(this.components);
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.bottomPanel.SuspendLayout();
@@ -58,6 +61,7 @@ namespace Matcha.Forms
             this.windowDragPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.windowDragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.windowDragPanel.Controls.Add(this.attachedStatusLabel);
             this.windowDragPanel.Controls.Add(this.logoImageBox);
             this.windowDragPanel.Controls.Add(this.minimizeButton);
             this.windowDragPanel.Controls.Add(this.closeButton);
@@ -66,6 +70,19 @@ namespace Matcha.Forms
             this.windowDragPanel.Size = new System.Drawing.Size(668, 32);
             this.windowDragPanel.TabIndex = 0;
             this.windowDragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowDragPanel_MouseDown);
+            // 
+            // attachedStatusLabel
+            // 
+            this.attachedStatusLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.attachedStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attachedStatusLabel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.attachedStatusLabel.Location = new System.Drawing.Point(220, 8);
+            this.attachedStatusLabel.Name = "attachedStatusLabel";
+            this.attachedStatusLabel.Size = new System.Drawing.Size(229, 15);
+            this.attachedStatusLabel.TabIndex = 5;
+            this.attachedStatusLabel.Text = "Matcha - Not attached";
+            this.attachedStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.attachedStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.attachedStatusLabel_MouseDown);
             // 
             // logoImageBox
             // 
@@ -123,7 +140,8 @@ namespace Matcha.Forms
             // 
             // bottomPanel
             // 
-            this.bottomPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bottomPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.bottomPanel.Controls.Add(this.verticalSeperator);
             this.bottomPanel.Controls.Add(this.settingsButton);
@@ -132,23 +150,24 @@ namespace Matcha.Forms
             this.bottomPanel.Controls.Add(this.openScriptButton);
             this.bottomPanel.Controls.Add(this.saveScriptButton);
             this.bottomPanel.Controls.Add(this.executeButton);
-            this.bottomPanel.Location = new System.Drawing.Point(389, 295);
+            this.bottomPanel.Location = new System.Drawing.Point(12, 297);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(263, 32);
+            this.bottomPanel.Size = new System.Drawing.Size(644, 32);
             this.bottomPanel.TabIndex = 3;
             // 
             // verticalSeperator
             // 
+            this.verticalSeperator.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.verticalSeperator.BackColor = System.Drawing.Color.Gainsboro;
             this.verticalSeperator.ForeColor = System.Drawing.Color.Transparent;
-            this.verticalSeperator.Location = new System.Drawing.Point(161, 7);
+            this.verticalSeperator.Location = new System.Drawing.Point(352, 7);
             this.verticalSeperator.Name = "verticalSeperator";
             this.verticalSeperator.Size = new System.Drawing.Size(1, 18);
             this.verticalSeperator.TabIndex = 4;
             // 
             // settingsButton
             // 
-            this.settingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.settingsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.settingsButton.BorderRadius = 3;
             this.settingsButton.CheckedState.Parent = this.settingsButton;
             this.settingsButton.CustomImages.Parent = this.settingsButton;
@@ -159,7 +178,7 @@ namespace Matcha.Forms
             this.settingsButton.HoveredState.Parent = this.settingsButton;
             this.settingsButton.Image = global::Matcha.Properties.Resources.SettingsIcon;
             this.settingsButton.ImageSize = new System.Drawing.Size(21, 21);
-            this.settingsButton.Location = new System.Drawing.Point(214, 3);
+            this.settingsButton.Location = new System.Drawing.Point(405, 3);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.settingsButton.ShadowDecoration.Parent = this.settingsButton;
@@ -168,7 +187,7 @@ namespace Matcha.Forms
             // 
             // scriptHubButton
             // 
-            this.scriptHubButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.scriptHubButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.scriptHubButton.BorderRadius = 3;
             this.scriptHubButton.CheckedState.Parent = this.scriptHubButton;
             this.scriptHubButton.CustomImages.Parent = this.scriptHubButton;
@@ -178,7 +197,7 @@ namespace Matcha.Forms
             this.scriptHubButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
             this.scriptHubButton.HoveredState.Parent = this.scriptHubButton;
             this.scriptHubButton.Image = global::Matcha.Properties.Resources.ScriptHubIcon;
-            this.scriptHubButton.Location = new System.Drawing.Point(181, 3);
+            this.scriptHubButton.Location = new System.Drawing.Point(372, 3);
             this.scriptHubButton.Name = "scriptHubButton";
             this.scriptHubButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.scriptHubButton.ShadowDecoration.Parent = this.scriptHubButton;
@@ -187,7 +206,7 @@ namespace Matcha.Forms
             // 
             // attachButton
             // 
-            this.attachButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.attachButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.attachButton.BorderRadius = 3;
             this.attachButton.CheckedState.Parent = this.attachButton;
             this.attachButton.CustomImages.Parent = this.attachButton;
@@ -197,7 +216,7 @@ namespace Matcha.Forms
             this.attachButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
             this.attachButton.HoveredState.Parent = this.attachButton;
             this.attachButton.Image = global::Matcha.Properties.Resources.AttachIcon;
-            this.attachButton.Location = new System.Drawing.Point(121, 3);
+            this.attachButton.Location = new System.Drawing.Point(312, 3);
             this.attachButton.Name = "attachButton";
             this.attachButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.attachButton.ShadowDecoration.Parent = this.attachButton;
@@ -206,7 +225,7 @@ namespace Matcha.Forms
             // 
             // openScriptButton
             // 
-            this.openScriptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.openScriptButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.openScriptButton.BorderRadius = 3;
             this.openScriptButton.CheckedState.Parent = this.openScriptButton;
             this.openScriptButton.CustomImages.Parent = this.openScriptButton;
@@ -218,7 +237,7 @@ namespace Matcha.Forms
             this.openScriptButton.Image = global::Matcha.Properties.Resources.OpenFolderIcon;
             this.openScriptButton.ImageOffset = new System.Drawing.Point(0, -1);
             this.openScriptButton.ImageSize = new System.Drawing.Size(19, 19);
-            this.openScriptButton.Location = new System.Drawing.Point(88, 3);
+            this.openScriptButton.Location = new System.Drawing.Point(279, 3);
             this.openScriptButton.Name = "openScriptButton";
             this.openScriptButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.openScriptButton.ShadowDecoration.Parent = this.openScriptButton;
@@ -227,7 +246,7 @@ namespace Matcha.Forms
             // 
             // saveScriptButton
             // 
-            this.saveScriptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveScriptButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.saveScriptButton.BorderRadius = 3;
             this.saveScriptButton.CheckedState.Parent = this.saveScriptButton;
             this.saveScriptButton.CustomImages.Parent = this.saveScriptButton;
@@ -239,7 +258,7 @@ namespace Matcha.Forms
             this.saveScriptButton.Image = global::Matcha.Properties.Resources.SaveIcon;
             this.saveScriptButton.ImageOffset = new System.Drawing.Point(0, -1);
             this.saveScriptButton.ImageSize = new System.Drawing.Size(19, 19);
-            this.saveScriptButton.Location = new System.Drawing.Point(55, 3);
+            this.saveScriptButton.Location = new System.Drawing.Point(246, 3);
             this.saveScriptButton.Name = "saveScriptButton";
             this.saveScriptButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.saveScriptButton.ShadowDecoration.Parent = this.saveScriptButton;
@@ -248,7 +267,7 @@ namespace Matcha.Forms
             // 
             // executeButton
             // 
-            this.executeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.executeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.executeButton.BorderRadius = 3;
             this.executeButton.CheckedState.Parent = this.executeButton;
             this.executeButton.CustomImages.Parent = this.executeButton;
@@ -259,7 +278,7 @@ namespace Matcha.Forms
             this.executeButton.HoveredState.Parent = this.executeButton;
             this.executeButton.Image = global::Matcha.Properties.Resources.ExecuteIcon;
             this.executeButton.ImageSize = new System.Drawing.Size(17, 17);
-            this.executeButton.Location = new System.Drawing.Point(22, 3);
+            this.executeButton.Location = new System.Drawing.Point(213, 3);
             this.executeButton.Name = "executeButton";
             this.executeButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
             this.executeButton.ShadowDecoration.Parent = this.executeButton;
@@ -279,9 +298,9 @@ namespace Matcha.Forms
             this.monaco.CreationProperties = null;
             this.monaco.DefaultBackgroundColor = System.Drawing.Color.White;
             this.monaco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.monaco.Location = new System.Drawing.Point(12, 50);
+            this.monaco.Location = new System.Drawing.Point(12, 38);
             this.monaco.Name = "monaco";
-            this.monaco.Size = new System.Drawing.Size(459, 231);
+            this.monaco.Size = new System.Drawing.Size(504, 251);
             this.monaco.Source = new System.Uri("file:\\\\\\", System.UriKind.Absolute);
             this.monaco.TabIndex = 4;
             this.monaco.ZoomFactor = 1D;
@@ -291,12 +310,30 @@ namespace Matcha.Forms
             // 
             this.monacoElipse.TargetControl = this.monaco;
             // 
+            // scriptListView
+            // 
+            this.scriptListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scriptListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.scriptListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.scriptListView.HideSelection = false;
+            this.scriptListView.Location = new System.Drawing.Point(525, 38);
+            this.scriptListView.Name = "scriptListView";
+            this.scriptListView.Size = new System.Drawing.Size(131, 251);
+            this.scriptListView.TabIndex = 5;
+            this.scriptListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // scriptListElipse
+            // 
+            this.scriptListElipse.TargetControl = this.scriptListView;
+            // 
             // ExecutorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(668, 339);
+            this.Controls.Add(this.scriptListView);
             this.Controls.Add(this.monaco);
             this.Controls.Add(this.windowDragPanel);
             this.Controls.Add(this.bottomPanel);
@@ -332,6 +369,9 @@ namespace Matcha.Forms
         private System.Windows.Forms.Label verticalSeperator;
         private Microsoft.Web.WebView2.WinForms.WebView2 monaco;
         private ns1.SiticoneElipse monacoElipse;
+        private System.Windows.Forms.Label attachedStatusLabel;
+        private System.Windows.Forms.ListView scriptListView;
+        private ns1.SiticoneElipse scriptListElipse;
     }
 }
 
