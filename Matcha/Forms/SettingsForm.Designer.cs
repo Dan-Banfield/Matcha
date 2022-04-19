@@ -33,7 +33,6 @@ namespace Matcha.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.windowDragPanel = new System.Windows.Forms.Panel();
             this.logoImageBox = new System.Windows.Forms.PictureBox();
-            this.minimizeButton = new ns1.SiticoneButton();
             this.closeButton = new ns1.SiticoneButton();
             this.windowElipse = new ns1.SiticoneElipse(this.components);
             this.controlsHouseElipse = new ns1.SiticoneElipse(this.components);
@@ -41,10 +40,18 @@ namespace Matcha.Forms
             this.controlsHouse = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.weAreDevsAPICheckBox = new ns1.SiticoneCheckBox();
+            this.controlsHouse1 = new System.Windows.Forms.Panel();
+            this.easyExploitsAPICheckBox = new ns1.SiticoneCheckBox();
+            this.controlsHouseElipse1 = new ns1.SiticoneElipse(this.components);
+            this.controlsHouse2 = new System.Windows.Forms.Panel();
+            this.cometAPICheckBox = new ns1.SiticoneCheckBox();
+            this.controlsHouseElipse2 = new ns1.SiticoneElipse(this.components);
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.controlsPanel.SuspendLayout();
             this.controlsHouse.SuspendLayout();
+            this.controlsHouse1.SuspendLayout();
+            this.controlsHouse2.SuspendLayout();
             this.SuspendLayout();
             // 
             // windowDragPanel
@@ -53,11 +60,10 @@ namespace Matcha.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.windowDragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.windowDragPanel.Controls.Add(this.logoImageBox);
-            this.windowDragPanel.Controls.Add(this.minimizeButton);
             this.windowDragPanel.Controls.Add(this.closeButton);
             this.windowDragPanel.Location = new System.Drawing.Point(0, 0);
             this.windowDragPanel.Name = "windowDragPanel";
-            this.windowDragPanel.Size = new System.Drawing.Size(530, 32);
+            this.windowDragPanel.Size = new System.Drawing.Size(432, 32);
             this.windowDragPanel.TabIndex = 0;
             this.windowDragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowDragPanel_MouseDown);
             // 
@@ -71,26 +77,6 @@ namespace Matcha.Forms
             this.logoImageBox.TabIndex = 1;
             this.logoImageBox.TabStop = false;
             // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.CheckedState.Parent = this.minimizeButton;
-            this.minimizeButton.CustomImages.Parent = this.minimizeButton;
-            this.minimizeButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.minimizeButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.minimizeButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(136)))), ((int)(((byte)(102)))));
-            this.minimizeButton.HoveredState.Parent = this.minimizeButton;
-            this.minimizeButton.Image = global::Matcha.Properties.Resources.MinimizeIcon;
-            this.minimizeButton.ImageSize = new System.Drawing.Size(15, 20);
-            this.minimizeButton.Location = new System.Drawing.Point(430, 0);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.minimizeButton.ShadowDecoration.Parent = this.minimizeButton;
-            this.minimizeButton.Size = new System.Drawing.Size(50, 32);
-            this.minimizeButton.TabIndex = 2;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
-            // 
             // closeButton
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -103,7 +89,7 @@ namespace Matcha.Forms
             this.closeButton.HoveredState.Parent = this.closeButton;
             this.closeButton.Image = global::Matcha.Properties.Resources.CloseIcon;
             this.closeButton.ImageSize = new System.Drawing.Size(14, 14);
-            this.closeButton.Location = new System.Drawing.Point(480, 0);
+            this.closeButton.Location = new System.Drawing.Point(382, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.PressedColor = System.Drawing.Color.Red;
             this.closeButton.ShadowDecoration.Parent = this.closeButton;
@@ -121,21 +107,28 @@ namespace Matcha.Forms
             // 
             // controlsPanel
             // 
+            this.controlsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.controlsPanel.AutoScroll = true;
+            this.controlsPanel.Controls.Add(this.controlsHouse2);
+            this.controlsPanel.Controls.Add(this.controlsHouse1);
             this.controlsPanel.Controls.Add(this.titleLabel);
             this.controlsPanel.Controls.Add(this.controlsHouse);
             this.controlsPanel.Location = new System.Drawing.Point(0, 32);
             this.controlsPanel.Name = "controlsPanel";
-            this.controlsPanel.Size = new System.Drawing.Size(530, 190);
+            this.controlsPanel.Size = new System.Drawing.Size(432, 211);
             this.controlsPanel.TabIndex = 6;
             // 
             // controlsHouse
             // 
+            this.controlsHouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.controlsHouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.controlsHouse.Controls.Add(this.weAreDevsAPICheckBox);
-            this.controlsHouse.Location = new System.Drawing.Point(27, 52);
+            this.controlsHouse.Location = new System.Drawing.Point(27, 44);
             this.controlsHouse.Name = "controlsHouse";
-            this.controlsHouse.Size = new System.Drawing.Size(476, 45);
+            this.controlsHouse.Size = new System.Drawing.Size(378, 45);
             this.controlsHouse.TabIndex = 0;
             // 
             // titleLabel
@@ -143,7 +136,7 @@ namespace Matcha.Forms
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.titleLabel.Location = new System.Drawing.Point(27, 19);
+            this.titleLabel.Location = new System.Drawing.Point(27, 12);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(92, 20);
             this.titleLabel.TabIndex = 1;
@@ -168,17 +161,85 @@ namespace Matcha.Forms
             this.weAreDevsAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.weAreDevsAPICheckBox.UseVisualStyleBackColor = true;
             // 
+            // controlsHouse1
+            // 
+            this.controlsHouse1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlsHouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.controlsHouse1.Controls.Add(this.easyExploitsAPICheckBox);
+            this.controlsHouse1.Location = new System.Drawing.Point(27, 95);
+            this.controlsHouse1.Name = "controlsHouse1";
+            this.controlsHouse1.Size = new System.Drawing.Size(378, 45);
+            this.controlsHouse1.TabIndex = 1;
+            // 
+            // easyExploitsAPICheckBox
+            // 
+            this.easyExploitsAPICheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.easyExploitsAPICheckBox.CheckedState.BorderRadius = 2;
+            this.easyExploitsAPICheckBox.CheckedState.BorderThickness = 0;
+            this.easyExploitsAPICheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.easyExploitsAPICheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.easyExploitsAPICheckBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.easyExploitsAPICheckBox.Location = new System.Drawing.Point(15, 11);
+            this.easyExploitsAPICheckBox.Name = "easyExploitsAPICheckBox";
+            this.easyExploitsAPICheckBox.Size = new System.Drawing.Size(135, 24);
+            this.easyExploitsAPICheckBox.TabIndex = 0;
+            this.easyExploitsAPICheckBox.Text = "EasyExploits";
+            this.easyExploitsAPICheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.easyExploitsAPICheckBox.UncheckedState.BorderRadius = 2;
+            this.easyExploitsAPICheckBox.UncheckedState.BorderThickness = 0;
+            this.easyExploitsAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.easyExploitsAPICheckBox.UseVisualStyleBackColor = true;
+            // 
+            // controlsHouseElipse1
+            // 
+            this.controlsHouseElipse1.TargetControl = this.controlsHouse1;
+            // 
+            // controlsHouse2
+            // 
+            this.controlsHouse2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlsHouse2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.controlsHouse2.Controls.Add(this.cometAPICheckBox);
+            this.controlsHouse2.Location = new System.Drawing.Point(27, 146);
+            this.controlsHouse2.Name = "controlsHouse2";
+            this.controlsHouse2.Size = new System.Drawing.Size(378, 45);
+            this.controlsHouse2.TabIndex = 2;
+            // 
+            // cometAPICheckBox
+            // 
+            this.cometAPICheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cometAPICheckBox.CheckedState.BorderRadius = 2;
+            this.cometAPICheckBox.CheckedState.BorderThickness = 0;
+            this.cometAPICheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.cometAPICheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cometAPICheckBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.cometAPICheckBox.Location = new System.Drawing.Point(15, 11);
+            this.cometAPICheckBox.Name = "cometAPICheckBox";
+            this.cometAPICheckBox.Size = new System.Drawing.Size(135, 24);
+            this.cometAPICheckBox.TabIndex = 0;
+            this.cometAPICheckBox.Text = "Comet";
+            this.cometAPICheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cometAPICheckBox.UncheckedState.BorderRadius = 2;
+            this.cometAPICheckBox.UncheckedState.BorderThickness = 0;
+            this.cometAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cometAPICheckBox.UseVisualStyleBackColor = true;
+            // 
+            // controlsHouseElipse2
+            // 
+            this.controlsHouseElipse2.TargetControl = this.controlsHouse2;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(530, 224);
+            this.ClientSize = new System.Drawing.Size(432, 245);
             this.Controls.Add(this.windowDragPanel);
             this.Controls.Add(this.controlsPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(404, 197);
+            this.MinimumSize = new System.Drawing.Size(404, 187);
             this.Name = "SettingsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -188,6 +249,8 @@ namespace Matcha.Forms
             this.controlsPanel.ResumeLayout(false);
             this.controlsPanel.PerformLayout();
             this.controlsHouse.ResumeLayout(false);
+            this.controlsHouse1.ResumeLayout(false);
+            this.controlsHouse2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -197,13 +260,18 @@ namespace Matcha.Forms
         private System.Windows.Forms.Panel windowDragPanel;
         private ns1.SiticoneElipse windowElipse;
         private ns1.SiticoneButton closeButton;
-        private ns1.SiticoneButton minimizeButton;
         private System.Windows.Forms.PictureBox logoImageBox;
         private ns1.SiticoneElipse controlsHouseElipse;
         private System.Windows.Forms.Panel controlsPanel;
         private System.Windows.Forms.Panel controlsHouse;
         private System.Windows.Forms.Label titleLabel;
         private ns1.SiticoneCheckBox weAreDevsAPICheckBox;
+        private System.Windows.Forms.Panel controlsHouse1;
+        private ns1.SiticoneCheckBox easyExploitsAPICheckBox;
+        private ns1.SiticoneElipse controlsHouseElipse1;
+        private System.Windows.Forms.Panel controlsHouse2;
+        private ns1.SiticoneCheckBox cometAPICheckBox;
+        private ns1.SiticoneElipse controlsHouseElipse2;
     }
 }
 

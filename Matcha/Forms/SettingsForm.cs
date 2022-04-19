@@ -41,7 +41,6 @@ namespace Matcha.Forms
         }
 
         private void closeButton_Click(object sender, EventArgs e) => this.Close();
-        private void minimizeButton_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 
         #endregion
     }
