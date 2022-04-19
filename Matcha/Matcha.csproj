@@ -96,6 +96,7 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generics\API.cs" />
     <Compile Include="Generics\DiscordRPCManager.cs" />
     <Compile Include="Generics\MessageBox.cs" />
     <Compile Include="Program.cs" />
