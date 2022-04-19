@@ -184,6 +184,7 @@ namespace Matcha.Forms
             this.settingsButton.ShadowDecoration.Parent = this.settingsButton;
             this.settingsButton.Size = new System.Drawing.Size(27, 26);
             this.settingsButton.TabIndex = 9;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // scriptHubButton
             // 

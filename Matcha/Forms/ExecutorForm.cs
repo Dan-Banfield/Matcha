@@ -21,6 +21,8 @@ namespace Matcha.Forms
 
         public ExecutorForm()
         {
+            this.FormClosed += (o, e) => Process.GetCurrentProcess().Kill();
+
             AppDomain.CurrentDomain.UnhandledException += (o, e) =>
             {
                 File.WriteAllText("Error.log", e.ExceptionObject.ToString());
@@ -64,6 +66,10 @@ namespace Matcha.Forms
 
         private void closeButton_Click(object sender, EventArgs e) => Process.GetCurrentProcess().Kill();
         private void minimizeButton_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            ShowAsDialogueWindow(new SettingsForm());
+        }
 
         private void scriptListView_DoubleClick(object sender, EventArgs e)
         {
@@ -178,6 +184,15 @@ namespace Matcha.Forms
         }
 
         #endregion
+
+        #endregion
+
+        #region Window Handling
+
+        private void ShowAsDialogueWindow(Form windowToShow)
+        {
+            windowToShow.ShowDialog();
+        }
 
         #endregion
 
