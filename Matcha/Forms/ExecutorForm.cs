@@ -12,7 +12,6 @@ namespace Matcha.Forms
 {
     public partial class ExecutorForm : Form
     {
-
         #region Properties
 
         private DiscordRPCManager discordRPCManager;
@@ -66,10 +65,9 @@ namespace Matcha.Forms
 
         private void closeButton_Click(object sender, EventArgs e) => Process.GetCurrentProcess().Kill();
         private void minimizeButton_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
-        private void settingsButton_Click(object sender, EventArgs e)
-        {
-            ShowAsDialogueWindow(new SettingsForm());
-        }
+
+        private void settingsButton_Click(object sender, EventArgs e) => ShowAsDialogueWindow(new SettingsForm());
+        private void openScriptButton_Click(object sender, EventArgs e) => OpenScript();
 
         private void scriptListView_DoubleClick(object sender, EventArgs e)
         {
@@ -100,6 +98,8 @@ namespace Matcha.Forms
 
         private void PopulateScriptList()
         {
+            scriptListView.Clear();
+
             string[] scriptFiles = Directory.GetFiles("Scripts");
 
             if (scriptFiles.Length == 0) { scriptListView.Items.Add("No scripts available!"); return; }
@@ -195,6 +195,22 @@ namespace Matcha.Forms
         }
 
         #endregion
+
+        private void OpenScript()
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Title = "Open a script file";
+                ofd.Filter = "Text files (*.txt)|*.txt|Lua files (*.lua)|*.lua";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    SetMonacoText(File.ReadAllText(ofd.FileName));
+                    File.Copy(ofd.FileName, @"Scripts\" + ofd.SafeFileName);
+                    PopulateScriptList();
+                }
+            }
+        }
 
         #endregion
     }
