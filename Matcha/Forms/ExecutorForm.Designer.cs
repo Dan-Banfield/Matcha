@@ -204,6 +204,7 @@ namespace Matcha.Forms
             this.scriptHubButton.ShadowDecoration.Parent = this.scriptHubButton;
             this.scriptHubButton.Size = new System.Drawing.Size(27, 26);
             this.scriptHubButton.TabIndex = 8;
+            this.scriptHubButton.Click += new System.EventHandler(this.scriptHubButton_Click);
             // 
             // attachButton
             // 
@@ -223,6 +224,7 @@ namespace Matcha.Forms
             this.attachButton.ShadowDecoration.Parent = this.attachButton;
             this.attachButton.Size = new System.Drawing.Size(27, 26);
             this.attachButton.TabIndex = 7;
+            this.attachButton.Click += new System.EventHandler(this.attachButton_Click);
             // 
             // openScriptButton
             // 
@@ -286,6 +288,7 @@ namespace Matcha.Forms
             this.executeButton.ShadowDecoration.Parent = this.executeButton;
             this.executeButton.Size = new System.Drawing.Size(27, 26);
             this.executeButton.TabIndex = 4;
+            this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
             // 
             // bottomBorderElipse
             // 

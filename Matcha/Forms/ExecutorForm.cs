@@ -68,6 +68,9 @@ namespace Matcha.Forms
 
         private void settingsButton_Click(object sender, EventArgs e) => ShowAsDialogueWindow(new SettingsForm());
         private void openScriptButton_Click(object sender, EventArgs e) => OpenScript();
+        private void executeButton_Click(object sender, EventArgs e) => API.ExecuteScript(GetMonacoText());
+        private void attachButton_Click(object sender, EventArgs e) => API.Attach();
+        private void scriptHubButton_Click(object sender, EventArgs e) => Generics.MessageBox.ShowInformationMessage("Coming soon.");
 
         private void scriptListView_DoubleClick(object sender, EventArgs e)
         {
@@ -156,6 +159,17 @@ namespace Matcha.Forms
 
         private void monaco_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e) => LoadMonaco();
 
+        #endregion
+
+        #region Window Handling
+
+        private void ShowAsDialogueWindow(Form windowToShow)
+        {
+            windowToShow.ShowDialog();
+        }
+
+        #endregion
+
         #region Monaco Methods
 
         private void LoadMonaco()
@@ -166,6 +180,12 @@ namespace Matcha.Forms
         private async void SetMonacoText(string textToSet)
         {
             await ExecuteScriptFunctionAsync(monaco, "setText", new object[] { textToSet });
+        }
+
+        private string GetMonacoText()
+        {
+            return "";
+            //TODO: Get Monaco's text.
         }
 
         public async Task<string> ExecuteScriptFunctionAsync(WebView2 webView2, string functionName, params object[] parameters)
@@ -185,17 +205,6 @@ namespace Matcha.Forms
 
         #endregion
 
-        #endregion
-
-        #region Window Handling
-
-        private void ShowAsDialogueWindow(Form windowToShow)
-        {
-            windowToShow.ShowDialog();
-        }
-
-        #endregion
-
         private void OpenScript()
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -206,8 +215,14 @@ namespace Matcha.Forms
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     SetMonacoText(File.ReadAllText(ofd.FileName));
-                    File.Copy(ofd.FileName, @"Scripts\" + ofd.SafeFileName);
-                    PopulateScriptList();
+
+                    if (!Directory.Exists("Scripts")) Directory.CreateDirectory("Scripts");
+
+                    if (!File.Exists(@"Scripts\" + ofd.SafeFileName))
+                    {
+                        File.Copy(ofd.FileName, @"Scripts\" + ofd.SafeFileName);
+                        PopulateScriptList();
+                    }
                 }
             }
         }
