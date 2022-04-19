@@ -40,5 +40,19 @@ namespace Matcha.Generics
                     break;
             }
         }
+
+        public static bool isAttached()
+        {
+            switch (SelectedAPI)
+            {
+                case AvailableAPIs.WeAreDevs:
+                    return weAreDevsAPI.isAPIAttached();
+                case AvailableAPIs.EasyExploits:
+                    return false;
+                case AvailableAPIs.Comet:
+                    return false;
+            }
+            return false;
+        }
     }
 }

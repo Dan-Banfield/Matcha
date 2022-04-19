@@ -16,6 +16,8 @@ namespace Matcha.Forms
 
         private DiscordRPCManager discordRPCManager;
 
+        private bool updateAttachedStatus = true;
+
         #endregion
 
         public ExecutorForm()
@@ -69,7 +71,7 @@ namespace Matcha.Forms
         private void settingsButton_Click(object sender, EventArgs e) => ShowAsDialogueWindow(new SettingsForm());
         private void openScriptButton_Click(object sender, EventArgs e) => OpenScript();
         private void executeButton_Click(object sender, EventArgs e) => API.ExecuteScript(GetMonacoText());
-        private void attachButton_Click(object sender, EventArgs e) => API.Attach();
+        private void attachButton_Click(object sender, EventArgs e) => AttachAPI();
         private void scriptHubButton_Click(object sender, EventArgs e) => Generics.MessageBox.ShowInformationMessage("Coming soon.");
 
         private void scriptListView_DoubleClick(object sender, EventArgs e)
@@ -225,6 +227,27 @@ namespace Matcha.Forms
                     }
                 }
             }
+        }
+
+        private void attachedStatusTimer_Tick(object sender, EventArgs e)
+        {
+            if (updateAttachedStatus)
+            {
+                if (API.isAttached())
+                {
+                    attachedStatusLabel.Text = "Matcha - Attached!";
+                    return;
+                }
+                attachedStatusLabel.Text = "Matcha - Not attached";
+            }
+        }
+
+        private async void AttachAPI()
+        {
+            updateAttachedStatus = false;
+            attachedStatusLabel.Text = "Matcha - Attaching...";
+            await Task.Run(() => API.Attach());
+            updateAttachedStatus = true;
         }
 
         #endregion

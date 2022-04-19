@@ -50,6 +50,7 @@ namespace Matcha.Forms
             this.monacoElipse = new ns1.SiticoneElipse(this.components);
             this.scriptListView = new System.Windows.Forms.ListView();
             this.scriptListElipse = new ns1.SiticoneElipse(this.components);
+            this.attachedStatusTimer = new System.Windows.Forms.Timer(this.components);
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.bottomPanel.SuspendLayout();
@@ -338,6 +339,12 @@ namespace Matcha.Forms
             // 
             this.scriptListElipse.TargetControl = this.scriptListView;
             // 
+            // attachedStatusTimer
+            // 
+            this.attachedStatusTimer.Enabled = true;
+            this.attachedStatusTimer.Interval = 1000;
+            this.attachedStatusTimer.Tick += new System.EventHandler(this.attachedStatusTimer_Tick);
+            // 
             // ExecutorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +391,7 @@ namespace Matcha.Forms
         private System.Windows.Forms.Label attachedStatusLabel;
         private System.Windows.Forms.ListView scriptListView;
         private ns1.SiticoneElipse scriptListElipse;
+        private System.Windows.Forms.Timer attachedStatusTimer;
     }
 }
 
