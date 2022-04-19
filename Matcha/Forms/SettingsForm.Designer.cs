@@ -36,22 +36,24 @@ namespace Matcha.Forms
             this.closeButton = new ns1.SiticoneButton();
             this.windowElipse = new ns1.SiticoneElipse(this.components);
             this.controlsHouseElipse = new ns1.SiticoneElipse(this.components);
-            this.controlsPanel = new System.Windows.Forms.Panel();
             this.controlsHouse = new System.Windows.Forms.Panel();
-            this.titleLabel = new System.Windows.Forms.Label();
             this.weAreDevsAPICheckBox = new ns1.SiticoneCheckBox();
-            this.controlsHouse1 = new System.Windows.Forms.Panel();
-            this.easyExploitsAPICheckBox = new ns1.SiticoneCheckBox();
-            this.controlsHouseElipse1 = new ns1.SiticoneElipse(this.components);
+            this.controlsPanel = new System.Windows.Forms.Panel();
             this.controlsHouse2 = new System.Windows.Forms.Panel();
             this.cometAPICheckBox = new ns1.SiticoneCheckBox();
+            this.controlsHouse1 = new System.Windows.Forms.Panel();
+            this.easyExploitsAPICheckBox = new ns1.SiticoneCheckBox();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.controlsHouseElipse1 = new ns1.SiticoneElipse(this.components);
             this.controlsHouseElipse2 = new ns1.SiticoneElipse(this.components);
+            this.killRobloxButton = new ns1.SiticoneButton();
+            this.titleLabel1 = new System.Windows.Forms.Label();
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
-            this.controlsPanel.SuspendLayout();
             this.controlsHouse.SuspendLayout();
-            this.controlsHouse1.SuspendLayout();
+            this.controlsPanel.SuspendLayout();
             this.controlsHouse2.SuspendLayout();
+            this.controlsHouse1.SuspendLayout();
             this.SuspendLayout();
             // 
             // windowDragPanel
@@ -105,21 +107,6 @@ namespace Matcha.Forms
             // 
             this.controlsHouseElipse.TargetControl = this.controlsHouse;
             // 
-            // controlsPanel
-            // 
-            this.controlsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlsPanel.AutoScroll = true;
-            this.controlsPanel.Controls.Add(this.controlsHouse2);
-            this.controlsPanel.Controls.Add(this.controlsHouse1);
-            this.controlsPanel.Controls.Add(this.titleLabel);
-            this.controlsPanel.Controls.Add(this.controlsHouse);
-            this.controlsPanel.Location = new System.Drawing.Point(0, 32);
-            this.controlsPanel.Name = "controlsPanel";
-            this.controlsPanel.Size = new System.Drawing.Size(432, 211);
-            this.controlsPanel.TabIndex = 6;
-            // 
             // controlsHouse
             // 
             this.controlsHouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -128,26 +115,17 @@ namespace Matcha.Forms
             this.controlsHouse.Controls.Add(this.weAreDevsAPICheckBox);
             this.controlsHouse.Location = new System.Drawing.Point(27, 44);
             this.controlsHouse.Name = "controlsHouse";
-            this.controlsHouse.Size = new System.Drawing.Size(378, 45);
+            this.controlsHouse.Size = new System.Drawing.Size(361, 45);
             this.controlsHouse.TabIndex = 0;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.titleLabel.Location = new System.Drawing.Point(27, 12);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(92, 20);
-            this.titleLabel.TabIndex = 1;
-            this.titleLabel.Text = "Selected API";
             // 
             // weAreDevsAPICheckBox
             // 
+            this.weAreDevsAPICheckBox.Checked = true;
             this.weAreDevsAPICheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.weAreDevsAPICheckBox.CheckedState.BorderRadius = 2;
             this.weAreDevsAPICheckBox.CheckedState.BorderThickness = 0;
             this.weAreDevsAPICheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.weAreDevsAPICheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.weAreDevsAPICheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weAreDevsAPICheckBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.weAreDevsAPICheckBox.Location = new System.Drawing.Point(15, 11);
@@ -161,39 +139,23 @@ namespace Matcha.Forms
             this.weAreDevsAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.weAreDevsAPICheckBox.UseVisualStyleBackColor = true;
             // 
-            // controlsHouse1
+            // controlsPanel
             // 
-            this.controlsHouse1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.controlsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlsHouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.controlsHouse1.Controls.Add(this.easyExploitsAPICheckBox);
-            this.controlsHouse1.Location = new System.Drawing.Point(27, 95);
-            this.controlsHouse1.Name = "controlsHouse1";
-            this.controlsHouse1.Size = new System.Drawing.Size(378, 45);
-            this.controlsHouse1.TabIndex = 1;
-            // 
-            // easyExploitsAPICheckBox
-            // 
-            this.easyExploitsAPICheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.easyExploitsAPICheckBox.CheckedState.BorderRadius = 2;
-            this.easyExploitsAPICheckBox.CheckedState.BorderThickness = 0;
-            this.easyExploitsAPICheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.easyExploitsAPICheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.easyExploitsAPICheckBox.ForeColor = System.Drawing.Color.Gainsboro;
-            this.easyExploitsAPICheckBox.Location = new System.Drawing.Point(15, 11);
-            this.easyExploitsAPICheckBox.Name = "easyExploitsAPICheckBox";
-            this.easyExploitsAPICheckBox.Size = new System.Drawing.Size(135, 24);
-            this.easyExploitsAPICheckBox.TabIndex = 0;
-            this.easyExploitsAPICheckBox.Text = "EasyExploits";
-            this.easyExploitsAPICheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.easyExploitsAPICheckBox.UncheckedState.BorderRadius = 2;
-            this.easyExploitsAPICheckBox.UncheckedState.BorderThickness = 0;
-            this.easyExploitsAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.easyExploitsAPICheckBox.UseVisualStyleBackColor = true;
-            // 
-            // controlsHouseElipse1
-            // 
-            this.controlsHouseElipse1.TargetControl = this.controlsHouse1;
+            this.controlsPanel.AutoScroll = true;
+            this.controlsPanel.AutoScrollMargin = new System.Drawing.Size(0, 15);
+            this.controlsPanel.Controls.Add(this.titleLabel1);
+            this.controlsPanel.Controls.Add(this.killRobloxButton);
+            this.controlsPanel.Controls.Add(this.controlsHouse2);
+            this.controlsPanel.Controls.Add(this.controlsHouse1);
+            this.controlsPanel.Controls.Add(this.titleLabel);
+            this.controlsPanel.Controls.Add(this.controlsHouse);
+            this.controlsPanel.Location = new System.Drawing.Point(0, 32);
+            this.controlsPanel.Name = "controlsPanel";
+            this.controlsPanel.Size = new System.Drawing.Size(432, 211);
+            this.controlsPanel.TabIndex = 6;
             // 
             // controlsHouse2
             // 
@@ -203,7 +165,7 @@ namespace Matcha.Forms
             this.controlsHouse2.Controls.Add(this.cometAPICheckBox);
             this.controlsHouse2.Location = new System.Drawing.Point(27, 146);
             this.controlsHouse2.Name = "controlsHouse2";
-            this.controlsHouse2.Size = new System.Drawing.Size(378, 45);
+            this.controlsHouse2.Size = new System.Drawing.Size(361, 45);
             this.controlsHouse2.TabIndex = 2;
             // 
             // cometAPICheckBox
@@ -225,9 +187,85 @@ namespace Matcha.Forms
             this.cometAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.cometAPICheckBox.UseVisualStyleBackColor = true;
             // 
+            // controlsHouse1
+            // 
+            this.controlsHouse1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlsHouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.controlsHouse1.Controls.Add(this.easyExploitsAPICheckBox);
+            this.controlsHouse1.Location = new System.Drawing.Point(27, 95);
+            this.controlsHouse1.Name = "controlsHouse1";
+            this.controlsHouse1.Size = new System.Drawing.Size(361, 45);
+            this.controlsHouse1.TabIndex = 1;
+            // 
+            // easyExploitsAPICheckBox
+            // 
+            this.easyExploitsAPICheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.easyExploitsAPICheckBox.CheckedState.BorderRadius = 2;
+            this.easyExploitsAPICheckBox.CheckedState.BorderThickness = 0;
+            this.easyExploitsAPICheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.easyExploitsAPICheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.easyExploitsAPICheckBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.easyExploitsAPICheckBox.Location = new System.Drawing.Point(15, 11);
+            this.easyExploitsAPICheckBox.Name = "easyExploitsAPICheckBox";
+            this.easyExploitsAPICheckBox.Size = new System.Drawing.Size(135, 24);
+            this.easyExploitsAPICheckBox.TabIndex = 0;
+            this.easyExploitsAPICheckBox.Text = "EasyExploits";
+            this.easyExploitsAPICheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.easyExploitsAPICheckBox.UncheckedState.BorderRadius = 2;
+            this.easyExploitsAPICheckBox.UncheckedState.BorderThickness = 0;
+            this.easyExploitsAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.easyExploitsAPICheckBox.UseVisualStyleBackColor = true;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.titleLabel.Location = new System.Drawing.Point(27, 14);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(92, 20);
+            this.titleLabel.TabIndex = 1;
+            this.titleLabel.Text = "Selected API";
+            // 
+            // controlsHouseElipse1
+            // 
+            this.controlsHouseElipse1.TargetControl = this.controlsHouse1;
+            // 
             // controlsHouseElipse2
             // 
             this.controlsHouseElipse2.TargetControl = this.controlsHouse2;
+            // 
+            // killRobloxButton
+            // 
+            this.killRobloxButton.BorderRadius = 3;
+            this.killRobloxButton.CheckedState.Parent = this.killRobloxButton;
+            this.killRobloxButton.CustomImages.Parent = this.killRobloxButton;
+            this.killRobloxButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.killRobloxButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.killRobloxButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.killRobloxButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.killRobloxButton.HoveredState.Parent = this.killRobloxButton;
+            this.killRobloxButton.ImageSize = new System.Drawing.Size(15, 20);
+            this.killRobloxButton.Location = new System.Drawing.Point(27, 235);
+            this.killRobloxButton.Name = "killRobloxButton";
+            this.killRobloxButton.PressedColor = System.Drawing.Color.Red;
+            this.killRobloxButton.ShadowDecoration.Parent = this.killRobloxButton;
+            this.killRobloxButton.Size = new System.Drawing.Size(361, 32);
+            this.killRobloxButton.TabIndex = 4;
+            this.killRobloxButton.Text = "Kill Roblox";
+            this.killRobloxButton.Click += new System.EventHandler(this.killRobloxButton_Click);
+            // 
+            // titleLabel1
+            // 
+            this.titleLabel1.AutoSize = true;
+            this.titleLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.titleLabel1.Location = new System.Drawing.Point(27, 206);
+            this.titleLabel1.Name = "titleLabel1";
+            this.titleLabel1.Size = new System.Drawing.Size(56, 20);
+            this.titleLabel1.TabIndex = 5;
+            this.titleLabel1.Text = "Roblox";
             // 
             // SettingsForm
             // 
@@ -246,11 +284,11 @@ namespace Matcha.Forms
             this.Text = "Matcha - Settings";
             this.windowDragPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
+            this.controlsHouse.ResumeLayout(false);
             this.controlsPanel.ResumeLayout(false);
             this.controlsPanel.PerformLayout();
-            this.controlsHouse.ResumeLayout(false);
-            this.controlsHouse1.ResumeLayout(false);
             this.controlsHouse2.ResumeLayout(false);
+            this.controlsHouse1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -272,6 +310,8 @@ namespace Matcha.Forms
         private System.Windows.Forms.Panel controlsHouse2;
         private ns1.SiticoneCheckBox cometAPICheckBox;
         private ns1.SiticoneElipse controlsHouseElipse2;
+        private ns1.SiticoneButton killRobloxButton;
+        private System.Windows.Forms.Label titleLabel1;
     }
 }
 

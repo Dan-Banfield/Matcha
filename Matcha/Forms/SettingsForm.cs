@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Matcha.Forms
 {
@@ -41,6 +41,23 @@ namespace Matcha.Forms
         }
 
         private void closeButton_Click(object sender, EventArgs e) => this.Close();
+
+        private void killRobloxButton_Click(object sender, EventArgs e) => KillRoblox();
+
+        #endregion
+
+        #region Methods
+
+        private void KillRoblox()
+        {
+            ushort killCount = 0;
+            foreach (Process robloxProcess in Process.GetProcessesByName("RobloxPlayerBeta"))
+            {
+                robloxProcess.Kill();
+                killCount += 1;
+            }
+            Generics.MessageBox.ShowInformationMessage("Killed " + killCount.ToString() + " instance(s) of Roblox.");
+        }
 
         #endregion
     }
