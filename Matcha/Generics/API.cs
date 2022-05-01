@@ -50,7 +50,7 @@ namespace Matcha.Generics
             switch (SelectedAPI)
             {
                 case AvailableAPIs.WeAreDevs:
-                    weAreDevsAPI.SendLuaCScript(scriptToExecute);
+                    weAreDevsAPI.SendLuaScript(scriptToExecute);
                     break;
                 case AvailableAPIs.EasyExploits:
                     break;
