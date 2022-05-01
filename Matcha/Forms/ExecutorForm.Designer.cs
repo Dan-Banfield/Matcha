@@ -269,6 +269,7 @@ namespace Matcha.Forms
             this.saveScriptButton.ShadowDecoration.Parent = this.saveScriptButton;
             this.saveScriptButton.Size = new System.Drawing.Size(27, 26);
             this.saveScriptButton.TabIndex = 5;
+            this.saveScriptButton.Click += new System.EventHandler(this.saveScriptButton_Click);
             // 
             // executeButton
             // 

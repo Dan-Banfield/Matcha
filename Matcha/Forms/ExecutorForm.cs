@@ -70,7 +70,8 @@ namespace Matcha.Forms
 
         private void settingsButton_Click(object sender, EventArgs e) => ShowAsDialogueWindow(new SettingsForm());
         private void openScriptButton_Click(object sender, EventArgs e) => OpenScript();
-        private void executeButton_Click(object sender, EventArgs e) => API.ExecuteScript(GetMonacoText());
+        private void saveScriptButton_Click(object sender, EventArgs e) => SaveScriptAsync();
+        private async void executeButton_Click(object sender, EventArgs e) => API.ExecuteScript(await GetMonacoText());
         private void attachButton_Click(object sender, EventArgs e) => AttachAPI();
         private void scriptHubButton_Click(object sender, EventArgs e) => Generics.MessageBox.ShowInformationMessage("Coming soon.");
 
@@ -184,10 +185,10 @@ namespace Matcha.Forms
             await ExecuteScriptFunctionAsync(monaco, "setText", new object[] { textToSet });
         }
 
-        private string GetMonacoText()
+        private async Task<string> GetMonacoText()
         {
-            return "";
-            //TODO: Get Monaco's text.
+            string result = await monaco.ExecuteScriptAsync("getText()");
+            return result.Replace("\"", string.Empty);
         }
 
         public async Task<string> ExecuteScriptFunctionAsync(WebView2 webView2, string functionName, params object[] parameters)
@@ -225,6 +226,22 @@ namespace Matcha.Forms
                         File.Copy(ofd.FileName, @"Scripts\" + ofd.SafeFileName);
                         PopulateScriptList();
                     }
+                }
+            }
+        }
+
+        private async void SaveScriptAsync()
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Title = "Save script file";
+                sfd.Filter = "Text files (*.txt)|*.txt|Lua files (*.lua)|*.lua";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    File.Create(sfd.FileName).Close();
+                    File.WriteAllText(sfd.FileName, await GetMonacoText());
+                    Generics.MessageBox.ShowInformationMessage("Script saved successfully!");
                 }
             }
         }
