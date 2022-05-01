@@ -188,7 +188,7 @@ namespace Matcha.Forms
         private async Task<string> GetMonacoText()
         {
             string result = await monaco.ExecuteScriptAsync("getText()");
-            return result.Replace("\"", string.Empty);
+            return result.Substring(1, result.Length - 2).Replace(@"\", string.Empty);
         }
 
         public async Task<string> ExecuteScriptFunctionAsync(WebView2 webView2, string functionName, params object[] parameters)
