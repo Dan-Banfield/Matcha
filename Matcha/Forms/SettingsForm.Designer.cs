@@ -39,6 +39,8 @@ namespace Matcha.Forms
             this.controlsHouse = new System.Windows.Forms.Panel();
             this.weAreDevsAPICheckBox = new ns1.SiticoneCheckBox();
             this.controlsPanel = new System.Windows.Forms.Panel();
+            this.titleLabel1 = new System.Windows.Forms.Label();
+            this.killRobloxButton = new ns1.SiticoneButton();
             this.controlsHouse2 = new System.Windows.Forms.Panel();
             this.cometAPICheckBox = new ns1.SiticoneCheckBox();
             this.controlsHouse1 = new System.Windows.Forms.Panel();
@@ -46,8 +48,6 @@ namespace Matcha.Forms
             this.titleLabel = new System.Windows.Forms.Label();
             this.controlsHouseElipse1 = new ns1.SiticoneElipse(this.components);
             this.controlsHouseElipse2 = new ns1.SiticoneElipse(this.components);
-            this.killRobloxButton = new ns1.SiticoneButton();
-            this.titleLabel1 = new System.Windows.Forms.Label();
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.controlsHouse.SuspendLayout();
@@ -120,12 +120,10 @@ namespace Matcha.Forms
             // 
             // weAreDevsAPICheckBox
             // 
-            this.weAreDevsAPICheckBox.Checked = true;
             this.weAreDevsAPICheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.weAreDevsAPICheckBox.CheckedState.BorderRadius = 2;
             this.weAreDevsAPICheckBox.CheckedState.BorderThickness = 0;
             this.weAreDevsAPICheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.weAreDevsAPICheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.weAreDevsAPICheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weAreDevsAPICheckBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.weAreDevsAPICheckBox.Location = new System.Drawing.Point(15, 11);
@@ -138,6 +136,7 @@ namespace Matcha.Forms
             this.weAreDevsAPICheckBox.UncheckedState.BorderThickness = 0;
             this.weAreDevsAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.weAreDevsAPICheckBox.UseVisualStyleBackColor = true;
+            this.weAreDevsAPICheckBox.CheckedChanged += new System.EventHandler(this.weAreDevsAPICheckBox_CheckedChanged);
             // 
             // controlsPanel
             // 
@@ -156,6 +155,37 @@ namespace Matcha.Forms
             this.controlsPanel.Name = "controlsPanel";
             this.controlsPanel.Size = new System.Drawing.Size(432, 211);
             this.controlsPanel.TabIndex = 6;
+            // 
+            // titleLabel1
+            // 
+            this.titleLabel1.AutoSize = true;
+            this.titleLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.titleLabel1.Location = new System.Drawing.Point(27, 206);
+            this.titleLabel1.Name = "titleLabel1";
+            this.titleLabel1.Size = new System.Drawing.Size(56, 20);
+            this.titleLabel1.TabIndex = 5;
+            this.titleLabel1.Text = "Roblox";
+            // 
+            // killRobloxButton
+            // 
+            this.killRobloxButton.BorderRadius = 3;
+            this.killRobloxButton.CheckedState.Parent = this.killRobloxButton;
+            this.killRobloxButton.CustomImages.Parent = this.killRobloxButton;
+            this.killRobloxButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.killRobloxButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.killRobloxButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.killRobloxButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.killRobloxButton.HoveredState.Parent = this.killRobloxButton;
+            this.killRobloxButton.ImageSize = new System.Drawing.Size(15, 20);
+            this.killRobloxButton.Location = new System.Drawing.Point(27, 235);
+            this.killRobloxButton.Name = "killRobloxButton";
+            this.killRobloxButton.PressedColor = System.Drawing.Color.Red;
+            this.killRobloxButton.ShadowDecoration.Parent = this.killRobloxButton;
+            this.killRobloxButton.Size = new System.Drawing.Size(361, 32);
+            this.killRobloxButton.TabIndex = 4;
+            this.killRobloxButton.Text = "Kill Roblox";
+            this.killRobloxButton.Click += new System.EventHandler(this.killRobloxButton_Click);
             // 
             // controlsHouse2
             // 
@@ -186,6 +216,7 @@ namespace Matcha.Forms
             this.cometAPICheckBox.UncheckedState.BorderThickness = 0;
             this.cometAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.cometAPICheckBox.UseVisualStyleBackColor = true;
+            this.cometAPICheckBox.CheckedChanged += new System.EventHandler(this.cometAPICheckBox_CheckedChanged);
             // 
             // controlsHouse1
             // 
@@ -216,6 +247,7 @@ namespace Matcha.Forms
             this.easyExploitsAPICheckBox.UncheckedState.BorderThickness = 0;
             this.easyExploitsAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.easyExploitsAPICheckBox.UseVisualStyleBackColor = true;
+            this.easyExploitsAPICheckBox.CheckedChanged += new System.EventHandler(this.easyExploitsAPICheckBox_CheckedChanged);
             // 
             // titleLabel
             // 
@@ -236,37 +268,6 @@ namespace Matcha.Forms
             // 
             this.controlsHouseElipse2.TargetControl = this.controlsHouse2;
             // 
-            // killRobloxButton
-            // 
-            this.killRobloxButton.BorderRadius = 3;
-            this.killRobloxButton.CheckedState.Parent = this.killRobloxButton;
-            this.killRobloxButton.CustomImages.Parent = this.killRobloxButton;
-            this.killRobloxButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.killRobloxButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.killRobloxButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.killRobloxButton.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.killRobloxButton.HoveredState.Parent = this.killRobloxButton;
-            this.killRobloxButton.ImageSize = new System.Drawing.Size(15, 20);
-            this.killRobloxButton.Location = new System.Drawing.Point(27, 235);
-            this.killRobloxButton.Name = "killRobloxButton";
-            this.killRobloxButton.PressedColor = System.Drawing.Color.Red;
-            this.killRobloxButton.ShadowDecoration.Parent = this.killRobloxButton;
-            this.killRobloxButton.Size = new System.Drawing.Size(361, 32);
-            this.killRobloxButton.TabIndex = 4;
-            this.killRobloxButton.Text = "Kill Roblox";
-            this.killRobloxButton.Click += new System.EventHandler(this.killRobloxButton_Click);
-            // 
-            // titleLabel1
-            // 
-            this.titleLabel1.AutoSize = true;
-            this.titleLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.titleLabel1.Location = new System.Drawing.Point(27, 206);
-            this.titleLabel1.Name = "titleLabel1";
-            this.titleLabel1.Size = new System.Drawing.Size(56, 20);
-            this.titleLabel1.TabIndex = 5;
-            this.titleLabel1.Text = "Roblox";
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +283,7 @@ namespace Matcha.Forms
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Settings";
+            this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.windowDragPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
             this.controlsHouse.ResumeLayout(false);

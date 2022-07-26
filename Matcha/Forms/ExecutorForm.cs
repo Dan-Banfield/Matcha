@@ -27,7 +27,7 @@ namespace Matcha.Forms
             AppDomain.CurrentDomain.UnhandledException += (o, e) =>
             {
                 File.WriteAllText("Error.log", e.ExceptionObject.ToString());
-                Generics.MessageBox.ShowErrorMessage("An error has occured! Please send the 'Error.log' file in this application's directory to the developer, DD06.");
+                Generics.MessageBox.ShowErrorMessage("An error has occured! Please send the 'Error.log' file in this application's directory to the developer, Polaris.");
                 Process.Start(Directory.GetCurrentDirectory());
                 Process.GetCurrentProcess().Kill();
             };

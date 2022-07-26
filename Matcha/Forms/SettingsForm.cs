@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Matcha.Generics;
 
 namespace Matcha.Forms
 {
@@ -13,6 +14,22 @@ namespace Matcha.Forms
 
         #region Form Event Handlers
 
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            LoadSettings();
+        }
+
+        private void LoadSettings()
+        {
+            UpdateCheckBoxes();
+        }
+
+        private void UpdateCheckBoxes()
+        {
+            weAreDevsAPICheckBox.Checked = API.SelectedAPI == API.AvailableAPIs.WeAreDevs;
+            easyExploitsAPICheckBox.Checked = API.SelectedAPI == API.AvailableAPIs.EasyExploits;
+            cometAPICheckBox.Checked = API.SelectedAPI == API.AvailableAPIs.Comet;
+        }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -41,8 +58,46 @@ namespace Matcha.Forms
         }
 
         private void closeButton_Click(object sender, EventArgs e) => this.Close();
-
         private void killRobloxButton_Click(object sender, EventArgs e) => KillRoblox();
+
+        private void weAreDevsAPICheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (weAreDevsAPICheckBox.Checked)
+            {
+                easyExploitsAPICheckBox.Checked = false;
+                cometAPICheckBox.Checked = false;
+                API.SelectedAPI = API.AvailableAPIs.WeAreDevs;
+                return;
+            }
+            else if (!easyExploitsAPICheckBox.Checked && !cometAPICheckBox.Checked)
+                weAreDevsAPICheckBox.Checked = true;
+        }
+
+        private void easyExploitsAPICheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (easyExploitsAPICheckBox.Checked)
+            {
+                weAreDevsAPICheckBox.Checked = false;
+                cometAPICheckBox.Checked = false;
+                API.SelectedAPI = API.AvailableAPIs.EasyExploits;
+                return;
+            }
+            else if (!weAreDevsAPICheckBox.Checked && !cometAPICheckBox.Checked)
+                easyExploitsAPICheckBox.Checked = true;
+        }
+
+        private void cometAPICheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cometAPICheckBox.Checked)
+            {
+                easyExploitsAPICheckBox.Checked = false;
+                weAreDevsAPICheckBox.Checked = false;
+                API.SelectedAPI = API.AvailableAPIs.Comet;
+                return;
+            }
+            else if (!easyExploitsAPICheckBox.Checked && !weAreDevsAPICheckBox.Checked)
+                cometAPICheckBox.Checked = true;
+        }
 
         #endregion
 
