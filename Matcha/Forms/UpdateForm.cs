@@ -1,21 +1,26 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace Matcha.Forms
 {
     public partial class UpdateForm : Form
     {
+        #region Properties
+
         private const string UPDATE_INFO_ENDPOINT = "https://raw.githubusercontent.com/Dan-Banfield/Json-Update-Files/main/MatchaUpdateInfo.json";
+
         public const double CURRENT_VERSION = 1.0;
 
         private enum UpdateStatus { UpdatesAvailable, NoUpdatesAvailable, CheckFailed }
 
         private UpdateInfo updateInfoRecieved;
+
+        #endregion
 
         public UpdateForm()
         {
@@ -55,6 +60,8 @@ namespace Matcha.Forms
         {
             bigLogoImageBox.Parent = backgroundGifPictureBox;
         }
+
+        #region Update Methods
 
         private async void CheckForUpdates()
         {
@@ -103,7 +110,10 @@ namespace Matcha.Forms
             switch (updateStatus)
             {
                 case UpdateStatus.UpdatesAvailable:
-                    if (MessageBox.Show("Version v" + updateInfoRecieved.latestVersion.ToString("0.0") + " is available! \n\nChangelog:\n" + updateInfoRecieved.changeLog + "\n\nWould you like to download it?", "Updates Available!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) { Process.Start(updateInfoRecieved.latestVersionDownloadLink); Process.GetCurrentProcess().Kill(); }
+                    if (MessageBox.Show("Version v" + updateInfoRecieved.latestVersion.ToString("0.0") + " is available! \n\nChangelog:\n" + updateInfoRecieved.changeLog + "\n\nWould you like to download it?", "Updates Available!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) 
+                    { 
+                        Process.Start(updateInfoRecieved.latestVersionDownloadLink); Process.GetCurrentProcess().Kill(); 
+                    }
                     break;
                 case UpdateStatus.NoUpdatesAvailable:
                     Generics.MessageBox.ShowInformationMessage("You're running the latest version.");
@@ -122,17 +132,19 @@ namespace Matcha.Forms
             LoadLoginForm();
         }
 
-        private void LoadLoginForm()
-        {
-            this.Hide();
-            new LoginForm().Show();
-        }
-
         private void ShowAnnouncements()
         {
             if (updateInfoRecieved == null) return;
 
             if (!string.IsNullOrWhiteSpace(updateInfoRecieved.announcement)) Generics.MessageBox.ShowInformationMessage("Announcement: " + updateInfoRecieved.announcement);
+        }
+
+        #endregion
+
+        private void LoadLoginForm()
+        {
+            this.Hide();
+            new LoginForm().Show();
         }
 
         #endregion

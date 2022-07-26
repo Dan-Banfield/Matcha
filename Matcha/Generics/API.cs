@@ -6,37 +6,17 @@ namespace Matcha.Generics
     {
         #region Properties
 
-        public enum AvailableAPIs { WeAreDevs, EasyExploits, Comet }
+        public enum AvailableAPIs { WeAreDevs = 0, EasyExploits = 1, Comet = 2 }
 
         public static AvailableAPIs SelectedAPI
         {
             get
             {
-                switch (Properties.Settings.Default.selectedAPI)
-                {
-                    case 0:
-                        return AvailableAPIs.WeAreDevs;
-                    case 1:
-                        return AvailableAPIs.EasyExploits;
-                    case 2:
-                        return AvailableAPIs.Comet;
-                }
-                return AvailableAPIs.WeAreDevs;
+                return (AvailableAPIs)Properties.Settings.Default.selectedAPI;
             }
             set
             {
-                switch (value)
-                {
-                    case AvailableAPIs.WeAreDevs:
-                        Properties.Settings.Default.selectedAPI = 0;
-                        break;
-                    case AvailableAPIs.EasyExploits:
-                        Properties.Settings.Default.selectedAPI = 1;
-                        break;
-                    case AvailableAPIs.Comet:
-                        Properties.Settings.Default.selectedAPI = 2;
-                        break;
-                }
+                Properties.Settings.Default.selectedAPI = (int)value;
                 Properties.Settings.Default.Save();
             }
         }
@@ -53,8 +33,10 @@ namespace Matcha.Generics
                     weAreDevsAPI.SendLuaScript(scriptToExecute);
                     break;
                 case AvailableAPIs.EasyExploits:
+                    // TODO: Add script execution code.
                     break;
                 case AvailableAPIs.Comet:
+                    // TODO: Add script execution code.
                     break;
             }
         }
@@ -67,22 +49,26 @@ namespace Matcha.Generics
                     weAreDevsAPI.LaunchExploit();
                     break;
                 case AvailableAPIs.EasyExploits:
+                    // TODO: Add attach code.
                     break;
                 case AvailableAPIs.Comet:
+                    // TODO: Add attach code.
                     break;
             }
         }
 
-        public static bool isAttached()
+        public static bool IsAttached()
         {
             switch (SelectedAPI)
             {
                 case AvailableAPIs.WeAreDevs:
                     return weAreDevsAPI.isAPIAttached();
                 case AvailableAPIs.EasyExploits:
-                    return false;
+                    // TODO: Add attach check code.
+                    break;
                 case AvailableAPIs.Comet:
-                    return false;
+                    // TODO: Add attach check code.
+                    break;
             }
             return false;
         }

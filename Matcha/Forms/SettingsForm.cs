@@ -50,7 +50,7 @@ namespace Matcha.Forms
 
         private void KillRoblox()
         {
-            ushort killCount = 0;
+            int killCount = 0;
             foreach (Process robloxProcess in Process.GetProcessesByName("RobloxPlayerBeta"))
             {
                 robloxProcess.Kill();

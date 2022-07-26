@@ -26,9 +26,9 @@ namespace Matcha.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public byte selectedAPI {
+        public int selectedAPI {
             get {
-                return ((byte)(this["selectedAPI"]));
+                return ((int)(this["selectedAPI"]));
             }
             set {
                 this["selectedAPI"] = value;

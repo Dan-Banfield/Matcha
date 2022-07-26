@@ -188,7 +188,7 @@ namespace Matcha.Forms
         private async Task<string> GetMonacoText()
         {
             string result = await monaco.ExecuteScriptAsync("getText()");
-            return result.Substring(1, result.Length - 2).Replace(@"\", string.Empty).Replace("rn", "\n");
+            return result.ToString().Substring(1, result.Length - 1);
         }
 
         public async Task<string> ExecuteScriptFunctionAsync(WebView2 webView2, string functionName, params object[] parameters)
@@ -250,7 +250,7 @@ namespace Matcha.Forms
         {
             if (updateAttachedStatus)
             {
-                if (API.isAttached())
+                if (API.IsAttached())
                 {
                     attachedStatusLabel.Text = "Matcha - Attached!";
                     return;
