@@ -10,7 +10,7 @@ namespace Matcha.Forms
         #region Properties
 
         private const string LINKVERTISE_URL = "https://direct-link.net/354596/serial-key-for-matcha";
-        private const string SERIAL_KEY_POINTER_URL = "https://pastebin.com/raw/J8mgqui3";
+        private const string SERIAL_KEY_POINTER_URL = "https://pastebin.com/raw/KTWa50cm";
 
         private string serialKeyUrl = string.Empty;
         private string serialKey = string.Empty;

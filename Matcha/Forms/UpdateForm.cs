@@ -12,7 +12,7 @@ namespace Matcha.Forms
     {
         #region Properties
 
-        private const string UPDATE_INFO_ENDPOINT = "https://raw.githubusercontent.com/Dan-Banfield/Json-Update-Files/main/MatchaUpdateInfo.json";
+        private const string UPDATE_INFO_ENDPOINT = "https://pastebin.com/raw/BnZh8bQD";
 
         public const double CURRENT_VERSION = 1.0;
 
@@ -79,8 +79,7 @@ namespace Matcha.Forms
         {
             try
             {
-                WebRequest webRequest = WebRequest.Create(UPDATE_INFO_ENDPOINT);
-                WebResponse webResponse = webRequest.GetResponse();
+                WebResponse webResponse = WebRequest.Create(UPDATE_INFO_ENDPOINT).GetResponse();
 
                 string json = "";
 
