@@ -93,6 +93,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WeAreDevs_API">
+      <HintPath>..\..\..\Synapse X Remake\WeAreDevs_API.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\SettingsForm.cs">

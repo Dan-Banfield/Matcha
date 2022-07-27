@@ -1,8 +1,22 @@
-﻿namespace Matcha.Generics
+﻿using WeAreDevs_API;
+
+namespace Matcha.Generics
 {
     public static class API
     {
         #region Properties
+
+        private static ExploitAPI weAreDevsAPI;
+
+        private static ExploitAPI weAreDevsAPIInstace
+        {
+            get
+            {
+                if (weAreDevsAPI == null)
+                    weAreDevsAPI = new ExploitAPI();
+                return weAreDevsAPI;
+            }
+        }
 
         public enum AvailableAPIs { WeAreDevs = 0, EasyExploits = 1, Comet = 2 }
 
@@ -26,7 +40,7 @@
             switch (SelectedAPI)
             {
                 case AvailableAPIs.WeAreDevs:
-                    // TODO: Add script execution code.
+                    weAreDevsAPIInstace.SendLuaScript(scriptToExecute);
                     break;
                 case AvailableAPIs.EasyExploits:
                     // TODO: Add script execution code.
@@ -42,7 +56,7 @@
             switch (SelectedAPI)
             {
                 case AvailableAPIs.WeAreDevs:
-                    // TODO: Add attach code.
+                    weAreDevsAPIInstace.LaunchExploit();
                     break;
                 case AvailableAPIs.EasyExploits:
                     // TODO: Add attach code.
@@ -58,7 +72,7 @@
             switch (SelectedAPI)
             {
                 case AvailableAPIs.WeAreDevs:
-                    // TODO: Add attach check code.
+                    return weAreDevsAPIInstace.isAPIAttached();
                 case AvailableAPIs.EasyExploits:
                     // TODO: Add attach check code.
                     break;
