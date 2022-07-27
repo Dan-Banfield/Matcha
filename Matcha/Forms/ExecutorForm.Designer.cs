@@ -50,6 +50,8 @@ namespace Matcha.Forms
             this.scriptListView = new System.Windows.Forms.ListView();
             this.scriptListElipse = new ns1.SiticoneElipse(this.components);
             this.attachedStatusTimer = new System.Windows.Forms.Timer(this.components);
+            this.chromiumWebBrowser = new CefSharp.WinForms.ChromiumWebBrowser();
+            this.chromiumWebBrowserElipse = new ns1.SiticoneElipse(this.components);
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.bottomPanel.SuspendLayout();
@@ -293,7 +295,7 @@ namespace Matcha.Forms
             // bottomBorderElipse
             // 
             this.bottomBorderElipse.TargetControl = this.bottomPanel;
-            //
+            // 
             // scriptListView
             // 
             this.scriptListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -323,12 +325,28 @@ namespace Matcha.Forms
             this.attachedStatusTimer.Interval = 1000;
             this.attachedStatusTimer.Tick += new System.EventHandler(this.attachedStatusTimer_Tick);
             // 
+            // chromiumWebBrowser
+            // 
+            this.chromiumWebBrowser.ActivateBrowserOnCreation = false;
+            this.chromiumWebBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chromiumWebBrowser.Location = new System.Drawing.Point(12, 38);
+            this.chromiumWebBrowser.Name = "chromiumWebBrowser";
+            this.chromiumWebBrowser.Size = new System.Drawing.Size(409, 206);
+            this.chromiumWebBrowser.TabIndex = 6;
+            // 
+            // chromiumWebBrowserElipse
+            // 
+            this.chromiumWebBrowserElipse.TargetControl = this.chromiumWebBrowser;
+            // 
             // ExecutorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(570, 294);
+            this.Controls.Add(this.chromiumWebBrowser);
             this.Controls.Add(this.scriptListView);
             this.Controls.Add(this.windowDragPanel);
             this.Controls.Add(this.bottomPanel);
@@ -339,6 +357,7 @@ namespace Matcha.Forms
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Executor";
+            this.Load += new System.EventHandler(this.ExecutorForm_Load);
             this.windowDragPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
             this.bottomPanel.ResumeLayout(false);
@@ -367,6 +386,8 @@ namespace Matcha.Forms
         private System.Windows.Forms.ListView scriptListView;
         private ns1.SiticoneElipse scriptListElipse;
         private System.Windows.Forms.Timer attachedStatusTimer;
+        private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser;
+        private ns1.SiticoneElipse chromiumWebBrowserElipse;
     }
 }
 

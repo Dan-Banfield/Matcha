@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Diagnostics;
-using Matcha.Generics;
-using System.Drawing;
+using CefSharp;
 using System.IO;
+using System.Drawing;
+using Matcha.Generics;
+using System.Diagnostics;
+using System.Windows.Forms;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace Matcha.Forms
 {
@@ -63,6 +63,8 @@ namespace Matcha.Forms
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void ExecutorForm_Load(object sender, EventArgs e) => LoadMonaco();
 
         private void closeButton_Click(object sender, EventArgs e) => Process.GetCurrentProcess().Kill();
         private void minimizeButton_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
@@ -176,17 +178,19 @@ namespace Matcha.Forms
 
         private void LoadMonaco()
         {
-            // monaco.Source = new Uri(@"file:///" + Directory.GetCurrentDirectory() + @"\Monaco\Monaco.html");
+            chromiumWebBrowser.LoadUrl(@"file:///" + Directory.GetCurrentDirectory() + @"\Monaco\Monaco.html");
         }
 
         private void SetMonacoText(string textToSet)
         {
-            throw new NotImplementedException();
+            chromiumWebBrowser.ExecuteScriptAsync("setText", new object[] { textToSet });
         }
 
         private string GetMonacoText()
         {
-            throw new NotImplementedException();
+            var value = chromiumWebBrowser.EvaluateScriptAsync("getText()");
+            value.Wait();
+            return value.Result.Success ? value.Result.Result.ToString() : "";
         }
 
         #endregion
