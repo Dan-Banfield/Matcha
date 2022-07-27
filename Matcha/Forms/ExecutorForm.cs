@@ -199,7 +199,7 @@ namespace Matcha.Forms
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Title = "Open a script file";
+                ofd.Title = "Open";
                 ofd.Filter = "Text files (*.txt)|*.txt|Lua files (*.lua)|*.lua";
 
                 if (ofd.ShowDialog() == DialogResult.OK)
@@ -221,14 +221,14 @@ namespace Matcha.Forms
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
-                sfd.Title = "Save script file";
+                sfd.Title = "Save As";
                 sfd.Filter = "Text files (*.txt)|*.txt|Lua files (*.lua)|*.lua";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     File.Create(sfd.FileName).Close();
                     File.WriteAllText(sfd.FileName, GetMonacoText());
-                    Generics.MessageBox.ShowInformationMessage("Script saved successfully!");
+                    Generics.MessageBox.ShowInformationMessage("Script saved successfully.");
                 }
             }
         }

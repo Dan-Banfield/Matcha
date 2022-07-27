@@ -115,7 +115,7 @@ namespace Matcha.Forms
                     }
                     break;
                 case UpdateStatus.NoUpdatesAvailable:
-                    Generics.MessageBox.ShowInformationMessage("You're running the latest version.");
+                    Generics.MessageBox.ShowInformationMessage("No updates available.");
                     break;
                 case UpdateStatus.CheckFailed:
                     Generics.MessageBox.ShowErrorMessage("Failed to check for updates! Please connect to the internet and try again later.");
