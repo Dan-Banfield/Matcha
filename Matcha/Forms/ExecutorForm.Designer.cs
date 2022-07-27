@@ -46,7 +46,6 @@ namespace Matcha.Forms
             this.saveScriptButton = new ns1.SiticoneButton();
             this.executeButton = new ns1.SiticoneButton();
             this.bottomBorderElipse = new ns1.SiticoneElipse(this.components);
-            this.monaco = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.monacoElipse = new ns1.SiticoneElipse(this.components);
             this.scriptListView = new System.Windows.Forms.ListView();
             this.scriptListElipse = new ns1.SiticoneElipse(this.components);
@@ -54,7 +53,6 @@ namespace Matcha.Forms
             this.windowDragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
             this.bottomPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monaco)).BeginInit();
             this.SuspendLayout();
             // 
             // windowDragPanel
@@ -295,28 +293,7 @@ namespace Matcha.Forms
             // bottomBorderElipse
             // 
             this.bottomBorderElipse.TargetControl = this.bottomPanel;
-            // 
-            // monaco
-            // 
-            this.monaco.AllowExternalDrop = true;
-            this.monaco.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.monaco.CreationProperties = null;
-            this.monaco.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.monaco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.monaco.Location = new System.Drawing.Point(12, 38);
-            this.monaco.Name = "monaco";
-            this.monaco.Size = new System.Drawing.Size(406, 206);
-            this.monaco.Source = new System.Uri("file:\\\\\\", System.UriKind.Absolute);
-            this.monaco.TabIndex = 4;
-            this.monaco.ZoomFactor = 1D;
-            this.monaco.CoreWebView2InitializationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs>(this.monaco_CoreWebView2InitializationCompleted);
-            // 
-            // monacoElipse
-            // 
-            this.monacoElipse.TargetControl = this.monaco;
-            // 
+            //
             // scriptListView
             // 
             this.scriptListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -353,7 +330,6 @@ namespace Matcha.Forms
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(570, 294);
             this.Controls.Add(this.scriptListView);
-            this.Controls.Add(this.monaco);
             this.Controls.Add(this.windowDragPanel);
             this.Controls.Add(this.bottomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -366,7 +342,6 @@ namespace Matcha.Forms
             this.windowDragPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
             this.bottomPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.monaco)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,7 +362,6 @@ namespace Matcha.Forms
         private ns1.SiticoneButton settingsButton;
         private ns1.SiticoneButton scriptHubButton;
         private System.Windows.Forms.Label verticalSeperator;
-        private Microsoft.Web.WebView2.WinForms.WebView2 monaco;
         private ns1.SiticoneElipse monacoElipse;
         private System.Windows.Forms.Label attachedStatusLabel;
         private System.Windows.Forms.ListView scriptListView;

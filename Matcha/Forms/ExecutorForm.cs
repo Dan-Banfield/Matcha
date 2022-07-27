@@ -5,7 +5,6 @@ using Matcha.Generics;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.Web.WebView2.WinForms;
 using Newtonsoft.Json;
 
 namespace Matcha.Forms
@@ -70,8 +69,8 @@ namespace Matcha.Forms
 
         private void settingsButton_Click(object sender, EventArgs e) => ShowAsDialogueWindow(new SettingsForm());
         private void openScriptButton_Click(object sender, EventArgs e) => OpenScript();
-        private void saveScriptButton_Click(object sender, EventArgs e) => SaveScriptAsync();
-        private async void executeButton_Click(object sender, EventArgs e) => API.ExecuteScript(await GetMonacoText());
+        private void saveScriptButton_Click(object sender, EventArgs e) => SaveScript();
+        private void executeButton_Click(object sender, EventArgs e) => API.ExecuteScript(GetMonacoText());
         private void attachButton_Click(object sender, EventArgs e) => AttachAPI();
         private void scriptHubButton_Click(object sender, EventArgs e) => Generics.MessageBox.ShowInformationMessage("Coming soon.");
 
@@ -79,6 +78,8 @@ namespace Matcha.Forms
         {
             if (scriptListView.SelectedItems.Count > 0)
             {
+                string fileName = @"Scripts\" + scriptListView.SelectedItems[0].Text;
+                if (!File.Exists(fileName)) return;
                 SetMonacoText(File.ReadAllText(@"Scripts\" + scriptListView.SelectedItems[0].Text));
             }
         }
@@ -160,8 +161,6 @@ namespace Matcha.Forms
             catch { return; }
         }
 
-        private void monaco_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e) => LoadMonaco();
-
         #endregion
 
         #region Window Handling
@@ -177,33 +176,17 @@ namespace Matcha.Forms
 
         private void LoadMonaco()
         {
-            monaco.Source = new Uri(@"file:///" + Directory.GetCurrentDirectory() + @"\Monaco\Monaco.html");
+            // monaco.Source = new Uri(@"file:///" + Directory.GetCurrentDirectory() + @"\Monaco\Monaco.html");
         }
 
-        private async void SetMonacoText(string textToSet)
+        private void SetMonacoText(string textToSet)
         {
-            await ExecuteScriptFunctionAsync(monaco, "setText", new object[] { textToSet });
+            throw new NotImplementedException();
         }
 
-        private async Task<string> GetMonacoText()
+        private string GetMonacoText()
         {
-            string result = await monaco.ExecuteScriptAsync("getText()");
-            return result.ToString().Substring(1, result.Length - 1);
-        }
-
-        public async Task<string> ExecuteScriptFunctionAsync(WebView2 webView2, string functionName, params object[] parameters)
-        {
-            string script = functionName + "(";
-            for (int i = 0; i < parameters.Length; i++)
-            {
-                script += JsonConvert.SerializeObject(parameters[i]);
-                if (i < parameters.Length - 1)
-                {
-                    script += ", ";
-                }
-            }
-            script += ");";
-            return await webView2.ExecuteScriptAsync(script);
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -230,7 +213,7 @@ namespace Matcha.Forms
             }
         }
 
-        private async void SaveScriptAsync()
+        private void SaveScript()
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
@@ -240,7 +223,7 @@ namespace Matcha.Forms
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     File.Create(sfd.FileName).Close();
-                    File.WriteAllText(sfd.FileName, await GetMonacoText());
+                    File.WriteAllText(sfd.FileName, GetMonacoText());
                     Generics.MessageBox.ShowInformationMessage("Script saved successfully!");
                 }
             }

@@ -1,6 +1,4 @@
-﻿using WeAreDevs_API;
-
-namespace Matcha.Generics
+﻿namespace Matcha.Generics
 {
     public static class API
     {
@@ -21,8 +19,6 @@ namespace Matcha.Generics
             }
         }
 
-        private static ExploitAPI weAreDevsAPI = new ExploitAPI();
-
         #endregion
 
         public static void ExecuteScript(string scriptToExecute)
@@ -30,7 +26,7 @@ namespace Matcha.Generics
             switch (SelectedAPI)
             {
                 case AvailableAPIs.WeAreDevs:
-                    weAreDevsAPI.SendLuaScript(scriptToExecute);
+                    // TODO: Add script execution code.
                     break;
                 case AvailableAPIs.EasyExploits:
                     // TODO: Add script execution code.
@@ -46,7 +42,7 @@ namespace Matcha.Generics
             switch (SelectedAPI)
             {
                 case AvailableAPIs.WeAreDevs:
-                    weAreDevsAPI.LaunchExploit();
+                    // TODO: Add attach code.
                     break;
                 case AvailableAPIs.EasyExploits:
                     // TODO: Add attach code.
@@ -62,7 +58,7 @@ namespace Matcha.Generics
             switch (SelectedAPI)
             {
                 case AvailableAPIs.WeAreDevs:
-                    return weAreDevsAPI.isAPIAttached();
+                    // TODO: Add attach check code.
                 case AvailableAPIs.EasyExploits:
                     // TODO: Add attach check code.
                     break;
