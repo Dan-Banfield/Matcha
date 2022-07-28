@@ -1,4 +1,6 @@
-﻿using WeAreDevs_API;
+﻿using KrnlAPI;
+using WeAreDevs_API;
+using Matcha.Generics;
 
 namespace Matcha.Generics
 {
@@ -18,7 +20,19 @@ namespace Matcha.Generics
             }
         }
 
-        public enum AvailableAPIs { WeAreDevs = 0, EasyExploits = 1, Comet = 2 }
+        private static KrnlApi krnlAPI;
+
+        private static KrnlApi krnlAPIInstance
+        {
+            get
+            {
+                if (krnlAPI == null)
+                    krnlAPI = new KrnlApi();
+                return krnlAPI;
+            }
+        }
+
+        public enum AvailableAPIs { WeAreDevs = 0, Krnl = 1, Comet = 2 }
 
         public static AvailableAPIs SelectedAPI
         {
@@ -42,11 +56,11 @@ namespace Matcha.Generics
                 case AvailableAPIs.WeAreDevs:
                     weAreDevsAPIInstace.SendLuaScript(scriptToExecute);
                     break;
-                case AvailableAPIs.EasyExploits:
-                    // TODO: Add script execution code.
+                case AvailableAPIs.Krnl:
+                    krnlAPI.Execute(scriptToExecute);
                     break;
                 case AvailableAPIs.Comet:
-                    // TODO: Add script execution code.
+                    MessageBox.ShowInformationMessage("The Comet API is not currently available.");
                     break;
             }
         }
@@ -58,11 +72,11 @@ namespace Matcha.Generics
                 case AvailableAPIs.WeAreDevs:
                     weAreDevsAPIInstace.LaunchExploit();
                     break;
-                case AvailableAPIs.EasyExploits:
-                    // TODO: Add attach code.
+                case AvailableAPIs.Krnl:
+                    krnlAPIInstance.Inject();
                     break;
                 case AvailableAPIs.Comet:
-                    // TODO: Add attach code.
+                    MessageBox.ShowInformationMessage("The Comet API is not currently available.");
                     break;
             }
         }
@@ -73,12 +87,10 @@ namespace Matcha.Generics
             {
                 case AvailableAPIs.WeAreDevs:
                     return weAreDevsAPIInstace.isAPIAttached();
-                case AvailableAPIs.EasyExploits:
-                    // TODO: Add attach check code.
-                    break;
+                case AvailableAPIs.Krnl:
+                    return krnlAPIInstance.IsInjected();
                 case AvailableAPIs.Comet:
-                    // TODO: Add attach check code.
-                    break;
+                    return false;
             }
             return false;
         }

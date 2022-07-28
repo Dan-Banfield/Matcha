@@ -27,7 +27,7 @@ namespace Matcha.Forms
         private void UpdateCheckBoxes()
         {
             weAreDevsAPICheckBox.Checked = API.SelectedAPI == API.AvailableAPIs.WeAreDevs;
-            easyExploitsAPICheckBox.Checked = API.SelectedAPI == API.AvailableAPIs.EasyExploits;
+            krnlAPICheckBox.Checked = API.SelectedAPI == API.AvailableAPIs.Krnl;
             cometAPICheckBox.Checked = API.SelectedAPI == API.AvailableAPIs.Comet;
         }
 
@@ -64,38 +64,38 @@ namespace Matcha.Forms
         {
             if (weAreDevsAPICheckBox.Checked)
             {
-                easyExploitsAPICheckBox.Checked = false;
+                krnlAPICheckBox.Checked = false;
                 cometAPICheckBox.Checked = false;
                 API.SelectedAPI = API.AvailableAPIs.WeAreDevs;
                 return;
             }
-            else if (!easyExploitsAPICheckBox.Checked && !cometAPICheckBox.Checked)
+            else if (!krnlAPICheckBox.Checked && !cometAPICheckBox.Checked)
                 weAreDevsAPICheckBox.Checked = true;
         }
 
-        private void easyExploitsAPICheckBox_CheckedChanged(object sender, EventArgs e)
+        private void krnlAPICheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (easyExploitsAPICheckBox.Checked)
+            if (krnlAPICheckBox.Checked)
             {
                 weAreDevsAPICheckBox.Checked = false;
                 cometAPICheckBox.Checked = false;
-                API.SelectedAPI = API.AvailableAPIs.EasyExploits;
+                API.SelectedAPI = API.AvailableAPIs.Krnl;
                 return;
             }
             else if (!weAreDevsAPICheckBox.Checked && !cometAPICheckBox.Checked)
-                easyExploitsAPICheckBox.Checked = true;
+                krnlAPICheckBox.Checked = true;
         }
 
         private void cometAPICheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (cometAPICheckBox.Checked)
             {
-                easyExploitsAPICheckBox.Checked = false;
+                krnlAPICheckBox.Checked = false;
                 weAreDevsAPICheckBox.Checked = false;
                 API.SelectedAPI = API.AvailableAPIs.Comet;
                 return;
             }
-            else if (!easyExploitsAPICheckBox.Checked && !weAreDevsAPICheckBox.Checked)
+            else if (!krnlAPICheckBox.Checked && !weAreDevsAPICheckBox.Checked)
                 cometAPICheckBox.Checked = true;
         }
 

@@ -44,7 +44,7 @@ namespace Matcha.Forms
             this.controlsHouse2 = new System.Windows.Forms.Panel();
             this.cometAPICheckBox = new ns1.SiticoneCheckBox();
             this.controlsHouse1 = new System.Windows.Forms.Panel();
-            this.easyExploitsAPICheckBox = new ns1.SiticoneCheckBox();
+            this.krnlAPICheckBox = new ns1.SiticoneCheckBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.controlsHouseElipse1 = new ns1.SiticoneElipse(this.components);
             this.controlsHouseElipse2 = new ns1.SiticoneElipse(this.components);
@@ -223,31 +223,31 @@ namespace Matcha.Forms
             this.controlsHouse1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.controlsHouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.controlsHouse1.Controls.Add(this.easyExploitsAPICheckBox);
+            this.controlsHouse1.Controls.Add(this.krnlAPICheckBox);
             this.controlsHouse1.Location = new System.Drawing.Point(27, 95);
             this.controlsHouse1.Name = "controlsHouse1";
             this.controlsHouse1.Size = new System.Drawing.Size(361, 45);
             this.controlsHouse1.TabIndex = 1;
             // 
-            // easyExploitsAPICheckBox
+            // krnlAPICheckBox
             // 
-            this.easyExploitsAPICheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.easyExploitsAPICheckBox.CheckedState.BorderRadius = 2;
-            this.easyExploitsAPICheckBox.CheckedState.BorderThickness = 0;
-            this.easyExploitsAPICheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
-            this.easyExploitsAPICheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.easyExploitsAPICheckBox.ForeColor = System.Drawing.Color.Gainsboro;
-            this.easyExploitsAPICheckBox.Location = new System.Drawing.Point(15, 11);
-            this.easyExploitsAPICheckBox.Name = "easyExploitsAPICheckBox";
-            this.easyExploitsAPICheckBox.Size = new System.Drawing.Size(135, 24);
-            this.easyExploitsAPICheckBox.TabIndex = 0;
-            this.easyExploitsAPICheckBox.Text = "EasyExploits";
-            this.easyExploitsAPICheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.easyExploitsAPICheckBox.UncheckedState.BorderRadius = 2;
-            this.easyExploitsAPICheckBox.UncheckedState.BorderThickness = 0;
-            this.easyExploitsAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.easyExploitsAPICheckBox.UseVisualStyleBackColor = true;
-            this.easyExploitsAPICheckBox.CheckedChanged += new System.EventHandler(this.easyExploitsAPICheckBox_CheckedChanged);
+            this.krnlAPICheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.krnlAPICheckBox.CheckedState.BorderRadius = 2;
+            this.krnlAPICheckBox.CheckedState.BorderThickness = 0;
+            this.krnlAPICheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(187)))), ((int)(((byte)(136)))));
+            this.krnlAPICheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.krnlAPICheckBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.krnlAPICheckBox.Location = new System.Drawing.Point(15, 11);
+            this.krnlAPICheckBox.Name = "krnlAPICheckBox";
+            this.krnlAPICheckBox.Size = new System.Drawing.Size(135, 24);
+            this.krnlAPICheckBox.TabIndex = 0;
+            this.krnlAPICheckBox.Text = "Krnl";
+            this.krnlAPICheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.krnlAPICheckBox.UncheckedState.BorderRadius = 2;
+            this.krnlAPICheckBox.UncheckedState.BorderThickness = 0;
+            this.krnlAPICheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.krnlAPICheckBox.UseVisualStyleBackColor = true;
+            this.krnlAPICheckBox.CheckedChanged += new System.EventHandler(this.krnlAPICheckBox_CheckedChanged);
             // 
             // titleLabel
             // 
@@ -307,7 +307,7 @@ namespace Matcha.Forms
         private System.Windows.Forms.Label titleLabel;
         private ns1.SiticoneCheckBox weAreDevsAPICheckBox;
         private System.Windows.Forms.Panel controlsHouse1;
-        private ns1.SiticoneCheckBox easyExploitsAPICheckBox;
+        private ns1.SiticoneCheckBox krnlAPICheckBox;
         private ns1.SiticoneElipse controlsHouseElipse1;
         private System.Windows.Forms.Panel controlsHouse2;
         private ns1.SiticoneCheckBox cometAPICheckBox;
