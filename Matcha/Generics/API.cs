@@ -8,6 +8,8 @@ namespace Matcha.Generics
     {
         #region Properties
 
+        private const string API_NOT_AVAILABLE = "This API is currently not available.";
+
         private static ExploitAPI weAreDevsAPI;
 
         private static ExploitAPI weAreDevsAPIInstace
@@ -60,7 +62,7 @@ namespace Matcha.Generics
                     krnlAPI.Execute(scriptToExecute);
                     break;
                 case AvailableAPIs.Comet:
-                    MessageBox.ShowInformationMessage("The Comet API is not currently available.");
+                    MessageBox.ShowInformationMessage(API_NOT_AVAILABLE);
                     break;
             }
         }
@@ -76,7 +78,7 @@ namespace Matcha.Generics
                     krnlAPIInstance.Inject();
                     break;
                 case AvailableAPIs.Comet:
-                    MessageBox.ShowInformationMessage("The Comet API is not currently available.");
+                    MessageBox.ShowInformationMessage(API_NOT_AVAILABLE);
                     break;
             }
         }
