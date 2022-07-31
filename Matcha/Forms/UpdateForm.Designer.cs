@@ -152,6 +152,7 @@ namespace Matcha.Forms
             this.Name = "UpdateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matcha - Updater";
+            this.Load += new System.EventHandler(this.UpdateForm_Load);
             this.windowDragPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bigLogoImageBox)).EndInit();

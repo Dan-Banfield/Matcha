@@ -19,11 +19,6 @@ namespace Matcha.Forms
             LoadSettings();
         }
 
-        private void LoadSettings()
-        {
-            UpdateCheckBoxes();
-        }
-
         private void UpdateCheckBoxes()
         {
             weAreDevsAPICheckBox.Checked = API.SelectedAPI == API.AvailableAPIs.WeAreDevs;
@@ -102,6 +97,11 @@ namespace Matcha.Forms
         #endregion
 
         #region Methods
+
+        private void LoadSettings()
+        {
+            UpdateCheckBoxes();
+        }
 
         private void KillRoblox()
         {

@@ -27,12 +27,15 @@ namespace Matcha.Forms
         public UpdateForm()
         {
             InitializeComponent();
-            InitializeForm();
-            CheckForUpdates();
         }
 
         #region Form Event Handlers
 
+        private void UpdateForm_Load(object sender, EventArgs e)
+        {
+            InitializeForm();
+            CheckForUpdates();
+        }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -67,13 +70,11 @@ namespace Matcha.Forms
 
         private async void CheckForUpdates()
         {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             Task.Run(() => 
             {
                 try { PostIP(); }
                 catch { }
             });
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 
             UpdateStatus updateStatus = UpdateStatus.CheckFailed;
 
